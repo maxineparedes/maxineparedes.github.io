@@ -2,6 +2,5 @@
 title: "Maxine Paredes"
 ---
 
-This is a Quarto website.
+I'm Maxine and I am originally from Calgary. I completed my BSc in Cognitive Systems and a Minor in Data Science at UBC. Before starting this program, I was a 2025 DSSG Fellow at the UBC Data Science Institute and  working as an HRIS Data Analyst at MNP. From the UBC MDS program, I am hoping to gain technical depth and a more holistic understanding of the field to become a Data Scientist.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

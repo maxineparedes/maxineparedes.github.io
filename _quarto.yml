@@ -2,6 +2,10 @@ project:
   type: website
   output-dir: docs
 
+about:
+  template: solana
+  image: images/headshot.jpg
+
 website:
   title: "Maxine Paredes"
   navbar:
