@@ -2,4 +2,19 @@
 title: "About"
 ---
 
-About this site
+## Background ##
+I graduated with my BSc in Cognitive Systems with a Minor in Data Science from UBC. Throughout my undergrad I worked in multiple research labs across UBC, where I gained experience applying data-driven approaches to investigate questions in social psychology, cognitive science, and sports biomechanics.
+
+In the summer of 2025, I was selected as one of eight individuals for the UBC Data Science Institute's Data Science for Social Good (DSSG) Program. We partnered with Mentor Canada, the largest non-profit dedicated to expanding access to youth mentorship nationally, to support an upcoming grant application by analyzing survey data to better understand the current landscape of youth mentorship in Canada. Alongside this analysis, I independently designed and implemented a retrieval-augmented generation (RAG) system to streamline Mentor Canada’s research workflow, enabling the organization to more efficiently access insights from their existing documents.
+
+Following my undergraduate studies, I joined MNP as a Data Analyst in Human Capital. My work involved developing reports and dashboards, analyzing workforce data, and finding ways to improve data usage and management. Moving into industry gave me a new perspective on working with data and helped me understand how analysis can be translated into meaningful insights for organizational decision-making.
+
+Currently, I am completing my MSc in Data Science at UBC where I am expanding my technical foundation and broadening my experience across different areas of data science.
+
+## Why Data Science? ##
+I first became interested in data science when I realized that data is all around us, often in ways we do not immediately recognize. This made me curious about the different ways data can be harnessed to better understand a given field and uncover insights that might otherwise go unnoticed.
+
+I am drawn to data science because it gives me the opportunity to act as a bridge between raw data and meaningful conclusions. I enjoy looking beyond what the data shows to understand why something is the way it is, and translating those findings into conclusions that are accessible and useful to others.
+
+## Outside of Data Science ##
+In my free time, I like to spend my time bouldering, hiking, reading, and discovering new thrift stores.
