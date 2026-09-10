@@ -2,17 +2,16 @@ project:
   type: website
   output-dir: docs
 
-about:
-  template: solana
-  image: images/headshot.jpg
-
 website:
   title: "Maxine Paredes"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
+      - href: blog.qmd
+        text: Blog
 
 format:
   html:

@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "About this site"
+    "text": "First day of school!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nMaxine Paredes\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,5 +12,40 @@
     "title": "Maxine Paredes",
     "section": "",
     "text": "I’m Maxine and I am originally from Calgary. I completed my BSc in Cognitive Systems and a Minor in Data Science at UBC. Before starting this program, I was a 2025 DSSG Fellow at the UBC Data Science Institute and working as an HRIS Data Analyst at MNP. From the UBC MDS program, I am hoping to gain technical depth and a more holistic understanding of the field to become a Data Scientist."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "First day of school!\n\n\nWe are now in our second week of the MDS program and I have been enjoying my time so far. While it holds up to its reputation as an accelerated program, I feel supported by the teaching team and am already learning so much. The immediate volume of work took me by surprise but I am also impressed by the amount of resources that are available to me. I am still trying to find the balance between school, relationships, health and wellness, clubs, and research but I am so excited for the opportunity to grow and build my skills."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I graduated with my BSc in Cognitive Systems with a Minor in Data Science from UBC. Throughout my undergrad I worked in multiple research labs across UBC, where I gained experience applying data-driven approaches to investigate questions in social psychology, cognitive science, and sports biomechanics.\nIn the summer of 2025, I was selected as one of eight individuals for the UBC Data Science Institute’s Data Science for Social Good (DSSG) Program. We partnered with Mentor Canada, the largest non-profit dedicated to expanding access to youth mentorship nationally, to support an upcoming grant application by analyzing survey data to better understand the current landscape of youth mentorship in Canada. Alongside this analysis, I independently designed and implemented a retrieval-augmented generation (RAG) system to streamline Mentor Canada’s research workflow, enabling the organization to more efficiently access insights from their existing documents.\nFollowing my undergraduate studies, I joined MNP as a Data Analyst in Human Capital. My work involved developing reports and dashboards, analyzing workforce data, and finding ways to improve data usage and management. Moving into industry gave me a new perspective on working with data and helped me understand how analysis can be translated into meaningful insights for organizational decision-making.\nCurrently, I am completing my MSc in Data Science at UBC where I am expanding my technical foundation and broadening my experience across different areas of data science."
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About",
+    "section": "",
+    "text": "I graduated with my BSc in Cognitive Systems with a Minor in Data Science from UBC. Throughout my undergrad I worked in multiple research labs across UBC, where I gained experience applying data-driven approaches to investigate questions in social psychology, cognitive science, and sports biomechanics.\nIn the summer of 2025, I was selected as one of eight individuals for the UBC Data Science Institute’s Data Science for Social Good (DSSG) Program. We partnered with Mentor Canada, the largest non-profit dedicated to expanding access to youth mentorship nationally, to support an upcoming grant application by analyzing survey data to better understand the current landscape of youth mentorship in Canada. Alongside this analysis, I independently designed and implemented a retrieval-augmented generation (RAG) system to streamline Mentor Canada’s research workflow, enabling the organization to more efficiently access insights from their existing documents.\nFollowing my undergraduate studies, I joined MNP as a Data Analyst in Human Capital. My work involved developing reports and dashboards, analyzing workforce data, and finding ways to improve data usage and management. Moving into industry gave me a new perspective on working with data and helped me understand how analysis can be translated into meaningful insights for organizational decision-making.\nCurrently, I am completing my MSc in Data Science at UBC where I am expanding my technical foundation and broadening my experience across different areas of data science."
+  },
+  {
+    "objectID": "about.html#why-data-science",
+    "href": "about.html#why-data-science",
+    "title": "About",
+    "section": "Why Data Science?",
+    "text": "Why Data Science?\nI first became interested in data science when I realized that data is all around us, often in ways we do not immediately recognize. This made me curious about the different ways data can be harnessed to better understand a given field and uncover insights that might otherwise go unnoticed.\nI am drawn to data science because it gives me the opportunity to act as a bridge between raw data and meaningful conclusions. I enjoy looking beyond what the data shows to understand why something is the way it is, and translating those findings into conclusions that are accessible and useful to others."
+  },
+  {
+    "objectID": "about.html#outside-of-data-science",
+    "href": "about.html#outside-of-data-science",
+    "title": "About",
+    "section": "Outside of Data Science",
+    "text": "Outside of Data Science\nIn my free time, I like to spend my time bouldering, hiking, reading, and discovering new thrift stores."
   }
 ]
