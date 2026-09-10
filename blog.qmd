@@ -4,5 +4,3 @@ listing:
   contents: posts
   sort: "date desc"
 ---
-
-![First day of school!](posts/first-weeks/first_week.jpg)
