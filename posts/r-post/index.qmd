@@ -1,3 +1,9 @@
+---
+title: "Python: Visualizing the palmerpenguins Dataset"
+author: "Maxine Paredes"
+date: 2026-09-22
+---
+
 ```{r}
 library(tidyverse)
 .libPaths()

@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "First day of school!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nMaxine Paredes\n\n\n\n\n\nNo matching items"
+    "text": "Python: Visualizing the palmerpenguins Dataset\n\n\n\n\n\n\n\n\nSep 22, 2026\n\n\nMaxine Paredes\n\n\n\n\n\n\n\n\n\n\n\n\nPython: Visualizing the palmerpenguins Dataset\n\n\n\n\n\n\n\n\nSep 22, 2026\n\n\nMaxine Paredes\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nMaxine Paredes\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -18,7 +18,14 @@
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
     "section": "",
-    "text": "First day of school!\n\n\nWe are now in our second week of the MDS program and I have been enjoying my time so far. While it holds up to its reputation as an accelerated program, I feel supported by the teaching team and am already learning so much. The immediate volume of work took me by surprise but I am also impressed by the amount of resources that are available to me. I am still trying to find the balance between school, relationships, health and wellness, clubs, and research but I am so excited for the opportunity to grow and build my skills."
+    "text": "First day of school!\n\n\nWe are now in our second week of the MDS program and I have been enjoying my time so far. While it holds up to its reputation as an accelerated program, I feel supported by the teaching team and am already learning so much.\nEven in the short amount of time I have been in the program, I can see that immersion and consistency will play a large role in success. The different ways of exposure to new material allows us to both solidfy our understand and identify areas of improvement from various angles.\nThe immediate volume of work took me by surprise but I am also impressed by the amount of resources that are available to me. I am still trying to find the balance between school, relationships, health and wellness, clubs, and research but I am so excited for the opportunity to grow and build my skills."
+  },
+  {
+    "objectID": "posts/r-post/index.html",
+    "href": "posts/r-post/index.html",
+    "title": "Python: Visualizing the palmerpenguins Dataset",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n.libPaths()\n\n[1] \"/Users/maxineparedes/mds/block_1/dsci_521/maxineparedes.github.io/renv/library/macos/R-4.6/aarch64-apple-darwin23\"\n[2] \"/Users/maxineparedes/Library/Caches/org.R-project.R/R/renv/sandbox/macos/R-4.6/aarch64-apple-darwin23/46003b10\""
   },
   {
     "objectID": "about.html",
@@ -47,5 +54,12 @@
     "title": "About",
     "section": "Outside of Data Science",
     "text": "Outside of Data Science\nIn my free time, I like to spend my time bouldering, hiking, reading, and discovering new thrift stores."
+  },
+  {
+    "objectID": "posts/python-post/index.html",
+    "href": "posts/python-post/index.html",
+    "title": "Python: Visualizing the palmerpenguins Dataset",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\n\nAttaching package: 'palmerpenguins'\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw\n\n\n\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\npenguin_count &lt;- penguins |&gt;\n                 count(species, island)\npenguin_count      \n\n# A tibble: 5 × 3\n  species   island        n\n  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n1 Adelie    Biscoe       44\n2 Adelie    Dream        56\n3 Adelie    Torgersen    52\n4 Chinstrap Dream        68\n5 Gentoo    Biscoe      124\n\n\n\ntotal_penguins &lt;- penguins |&gt; \n                  summarize(total = n())\n                  \ntotal_penguins\n\n# A tibble: 1 × 1\n  total\n  &lt;int&gt;\n1   344\n\n\n\nmean_bill_length_mm &lt;- penguins |&gt;\n    drop_na() |&gt;\n  group_by(species, sex) |&gt;\n  summarise(average_bill_length = mean(bill_length_mm))\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by species and sex.\nℹ Output is grouped by species.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(species, sex))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\nmean_bill_length_mm\n\n# A tibble: 6 × 3\n# Groups:   species [3]\n  species   sex    average_bill_length\n  &lt;fct&gt;     &lt;fct&gt;                &lt;dbl&gt;\n1 Adelie    female                37.3\n2 Adelie    male                  40.4\n3 Chinstrap female                46.6\n4 Chinstrap male                  51.1\n5 Gentoo    female                45.6\n6 Gentoo    male                  49.5"
   }
 ]

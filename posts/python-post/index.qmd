@@ -1,0 +1,34 @@
+---
+title: "Python: Visualizing the palmerpenguins Dataset"
+author: "Maxine Paredes"
+date: 2026-09-22
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+``` {r}
+penguins
+
+penguin_count <- penguins |>
+                 count(species, island)
+penguin_count      
+```
+
+``` {r}
+total_penguins <- penguins |> 
+                  summarize(total = n())
+                  
+total_penguins
+```
+
+```{r}
+mean_bill_length_mm <- penguins |>
+    drop_na() |>
+  group_by(species, sex) |>
+  summarise(average_bill_length = mean(bill_length_mm))
+
+mean_bill_length_mm
+```
