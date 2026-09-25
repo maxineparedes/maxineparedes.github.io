@@ -1,10 +1,64 @@
 ---
-title: "Python: Visualizing the palmerpenguins Dataset"
+title: "R: Visualizing the palmerpenguins Dataset"
 author: "Maxine Paredes"
 date: 2026-09-22
 ---
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
 
 ```{r}
+#| message: false
+#| warning: false
 library(tidyverse)
-.libPaths()
+library(palmerpenguins)
 ```
+
+``` {r}
+missing_values <- penguins |>
+  summarise(across(everything(), ~ sum(is.na(.x)))) |>
+  pivot_longer(everything(), names_to = "variable", values_to = "n_missing")
+
+missing_values
+```
+
+Before doing any exploratory data analysis, I loaded in the `tidyverse` and `palmerpenguins` libraries. I then created a tibble showing the number of missing values in each column of the `penguins` dataset. I thought that checking for missing data would help identify any gaps in the data can quietly affect summaries and plots later on. For the most part, columns had non-NA values but `sex` has 11 missing values, and there are 2 penguins that are missing all of their body measurements. Because of this, I use `drop_na()` in later steps to remove incomplete rows before calculating averages.
+
+``` {r}
+missing_sex <- penguins |>
+  count(species, missing = is.na(sex)) |>
+  group_by(species) |>
+  mutate(total = sum(n),
+         percent = round(n / sum(n) * 100, 1)) |>
+  ungroup() |>
+  filter(missing)     
+
+missing_sex
+```
+
+I wanted to understand which penguin `species` were missing values for `sex` and how much of the data was missing relative to each species. The Adelie species is missing 6 records, accounting for 3.9% of Adelie penguins, while Gentoo is missing 5, accounting for 4.0% of Gentoo penguins. Although Adelie has more missing records, the proportions are nearly identical because Adelie has more penguins overall. Chinstrap does not appear in the `missing_sex` tibble, which indicates that no Chinstrap records are missing `sex`. Overall, only 11 of 344 penguins (about 3.2%) are missing `sex`, so the missing values are unlikely to have a large effect on comparisons between males and females.
+
+```{r}
+#| message: false
+#| warning: false
+mean_bill_length_mm <- penguins |>
+    drop_na() |>
+  group_by(species, sex) |>
+  summarise(average_bill_length = mean(bill_length_mm))
+```
+
+```{r}
+#| label: fig-penguin-bill-length
+#| fig-cap: "Average Bill Length by Sex and Species"
+#| 
+mean_bill_length_mm |>
+  ggplot(aes(x = species, y = average_bill_length, fill = sex)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Average bill length by species and sex",
+    x = "Species",
+    y = "Average bill length (mm)",
+    fill = "Sex"
+  )
+```
+
+After visualizing the average `bill_length_mm` by `species` and `sex`, we can see that for all three species (Adelie, Chinstrap, and Gentoo), the average bill length of female penguins is consistently shorter than that of male penguins. In addition, Adelie penguins have the shortest bills overall, while Chinstrap and Gentoo penguins have comparable average bill lengths when accounting for `sex`.
