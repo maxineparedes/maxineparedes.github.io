@@ -364,13 +364,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Data: <a href="https://allisonhorst.github.io/palmerpenguins/">Palmer Penguins</a>, Palmer Station Antarctica LTER.</p>
-<div id="c1fff312" class="cell" data-message="false" data-execution_count="1">
+<div id="9be43bb0" class="cell" data-message="false" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9f433ff8" class="cell" data-execution_count="2">
+<div id="49766bb9" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> load_penguins()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>missing_values <span class="op">=</span> (</span>
@@ -394,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Before doing any exploratory data analysis, I loaded in the <code>tidyverse</code> and <code>palmerpenguins</code> libraries. I then created a tibble showing the number of missing values in each column of the <code>penguins</code> dataset. I thought that checking for missing data would help identify any gaps in the data can quietly affect summaries and plots later on. For the most part, columns had non-NA values but <code>sex</code> has 11 missing values, and there are 2 penguins that are missing all of their body measurements. Because of this, I use <code>drop_na()</code> in later steps to remove incomplete rows before calculating averages.</p>
-<div id="ce41f311" class="cell" data-execution_count="3">
+<div id="f034c3ae" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>missing_sex <span class="op">=</span> (</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    penguins.assign(missing<span class="op">=</span>penguins[<span class="st">"sex"</span>].isna())</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"species"</span>, <span class="st">"missing"</span>], observed<span class="op">=</span><span class="va">True</span>)</span>
@@ -445,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>I wanted to understand which penguin <code>species</code> were missing values for <code>sex</code> and how much of the data was missing relative to each species. The Adelie species is missing 6 records, accounting for 3.9% of Adelie penguins, while Gentoo is missing 5, accounting for 4.0% of Gentoo penguins. Although Adelie has more missing records, the proportions are nearly identical because Adelie has more penguins overall. Chinstrap does not appear in the <code>missing_sex</code> tibble, which indicates that no Chinstrap records are missing <code>sex</code>. Overall, only 11 of 344 penguins (about 3.2%) are missing <code>sex</code>, so the missing values are unlikely to have a large effect on comparisons between males and females.</p>
-<div id="d36cfd67" class="cell" data-execution_count="4">
+<div id="ff96ab79" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mean_bill_length_mm <span class="op">=</span> (</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    penguins.dropna()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"species"</span>, <span class="st">"sex"</span>], observed<span class="op">=</span><span class="va">True</span>, as_index<span class="op">=</span><span class="va">False</span>)[<span class="st">"bill_length_mm"</span>]</span>
