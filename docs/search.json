@@ -14,6 +14,13 @@
     "text": "Hi! I’m Maxine and I’m originally from Calgary, AB. I completed my BSc in Cognitive Systems and a Minor in Data Science at UBC. Before starting this program, I was a 2025 DSSG Fellow at the UBC Data Science Institute and working as an HRIS Data Analyst at MNP. From the UBC MDS program, I am hoping to gain technical depth and a more holistic understanding of the field to become a Data Scientist."
   },
   {
+    "objectID": "posts/python-post/index.html",
+    "href": "posts/python-post/index.html",
+    "title": "Python: Visualizing the palmerpenguins Dataset",
+    "section": "",
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\n\npenguins = load_penguins()\n\nmissing_values = (\n    penguins.isna()\n    .sum()\n    .reset_index()\n    .rename(columns={\"index\": \"variable\", 0: \"n_missing\"})\n)\n\nprint(missing_values)\n\n            variable  n_missing\n0            species          0\n1             island          0\n2     bill_length_mm          2\n3      bill_depth_mm          2\n4  flipper_length_mm          2\n5        body_mass_g          2\n6                sex         11\n7               year          0\n\n\nBefore doing any exploratory data analysis, I loaded in the tidyverse and palmerpenguins libraries. I then created a tibble showing the number of missing values in each column of the penguins dataset. I thought that checking for missing data would help identify any gaps in the data can quietly affect summaries and plots later on. For the most part, columns had non-NA values but sex has 11 missing values, and there are 2 penguins that are missing all of their body measurements. Because of this, I use drop_na() in later steps to remove incomplete rows before calculating averages.\n\nmissing_sex = (\n    penguins.assign(missing=penguins[\"sex\"].isna())\n    .groupby([\"species\", \"missing\"], observed=True)\n    .size()\n    .reset_index(name=\"n\")\n)\nmissing_sex[\"total\"] = missing_sex.groupby(\"species\", observed=True)[\"n\"].transform(\"sum\")\nmissing_sex[\"percent\"] = (missing_sex[\"n\"] / missing_sex[\"total\"] * 100).round(1)\nmissing_sex = missing_sex[missing_sex[\"missing\"]]\n\nmissing_sex\n\n\n\n\n\n\n\n\nspecies\nmissing\nn\ntotal\npercent\n\n\n\n\n1\nAdelie\nTrue\n6\n152\n3.9\n\n\n4\nGentoo\nTrue\n5\n124\n4.0\n\n\n\n\n\n\n\nI wanted to understand which penguin species were missing values for sex and how much of the data was missing relative to each species. The Adelie species is missing 6 records, accounting for 3.9% of Adelie penguins, while Gentoo is missing 5, accounting for 4.0% of Gentoo penguins. Although Adelie has more missing records, the proportions are nearly identical because Adelie has more penguins overall. Chinstrap does not appear in the missing_sex tibble, which indicates that no Chinstrap records are missing sex. Overall, only 11 of 344 penguins (about 3.2%) are missing sex, so the missing values are unlikely to have a large effect on comparisons between males and females.\n\nmean_bill_length_mm = (\n    penguins.dropna()\n    .groupby([\"species\", \"sex\"], observed=True, as_index=False)[\"bill_length_mm\"]\n    .mean()\n    .rename(columns={\"bill_length_mm\": \"average_bill_length\"})\n)\n\n\nsns.barplot(\n    data=mean_bill_length_mm,\n    x=\"species\",\n    y=\"average_bill_length\",\n    hue=\"sex\"\n)\nplt.title(\"Average bill length by species and sex\")\nplt.xlabel(\"Species\")\nplt.ylabel(\"Average bill length (mm)\")\nplt.legend(title=\"Sex\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average Bill Length by Sex and Species\n\n\n\n\n\nAfter visualizing the average bill_length_mm by species and sex, we can see that for all three species (Adelie, Chinstrap, and Gentoo), the average bill length of female penguins is consistently shorter than that of male penguins. In addition, Adelie penguins have the shortest bills overall, while Chinstrap and Gentoo penguins have comparable average bill lengths when accounting for sex."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
@@ -54,12 +61,5 @@
     "title": "About",
     "section": "Outside of Data Science",
     "text": "Outside of Data Science\nIn my free time, I like to spend my time bouldering, hiking, reading, and discovering new thrift stores."
-  },
-  {
-    "objectID": "posts/python-post/index.html",
-    "href": "posts/python-post/index.html",
-    "title": "Python: Visualizing the palmerpenguins Dataset",
-    "section": "",
-    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER."
   }
 ]

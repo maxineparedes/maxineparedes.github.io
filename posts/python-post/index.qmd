@@ -5,3 +5,71 @@ date: 2026-09-22
 ---
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
 Palmer Station Antarctica LTER.
+
+```{python}
+#| message: false
+#| warning: false
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from palmerpenguins import load_penguins
+```
+
+``` {python}
+penguins = load_penguins()
+
+missing_values = (
+    penguins.isna()
+    .sum()
+    .reset_index()
+    .rename(columns={"index": "variable", 0: "n_missing"})
+)
+
+print(missing_values)
+```
+
+Before doing any exploratory data analysis, I loaded in the `tidyverse` and `palmerpenguins` libraries. I then created a tibble showing the number of missing values in each column of the `penguins` dataset. I thought that checking for missing data would help identify any gaps in the data can quietly affect summaries and plots later on. For the most part, columns had non-NA values but `sex` has 11 missing values, and there are 2 penguins that are missing all of their body measurements. Because of this, I use `drop_na()` in later steps to remove incomplete rows before calculating averages.
+
+```{python}
+missing_sex = (
+    penguins.assign(missing=penguins["sex"].isna())
+    .groupby(["species", "missing"], observed=True)
+    .size()
+    .reset_index(name="n")
+)
+missing_sex["total"] = missing_sex.groupby("species", observed=True)["n"].transform("sum")
+missing_sex["percent"] = (missing_sex["n"] / missing_sex["total"] * 100).round(1)
+missing_sex = missing_sex[missing_sex["missing"]]
+
+missing_sex
+```
+
+I wanted to understand which penguin `species` were missing values for `sex` and how much of the data was missing relative to each species. The Adelie species is missing 6 records, accounting for 3.9% of Adelie penguins, while Gentoo is missing 5, accounting for 4.0% of Gentoo penguins. Although Adelie has more missing records, the proportions are nearly identical because Adelie has more penguins overall. Chinstrap does not appear in the `missing_sex` tibble, which indicates that no Chinstrap records are missing `sex`. Overall, only 11 of 344 penguins (about 3.2%) are missing `sex`, so the missing values are unlikely to have a large effect on comparisons between males and females.
+
+```{python}
+mean_bill_length_mm = (
+    penguins.dropna()
+    .groupby(["species", "sex"], observed=True, as_index=False)["bill_length_mm"]
+    .mean()
+    .rename(columns={"bill_length_mm": "average_bill_length"})
+)
+```
+
+```{python}
+#| label: fig-penguin-bill-length
+#| fig-cap: "Average Bill Length by Sex and Species"
+sns.barplot(
+    data=mean_bill_length_mm,
+    x="species",
+    y="average_bill_length",
+    hue="sex"
+)
+plt.title("Average bill length by species and sex")
+plt.xlabel("Species")
+plt.ylabel("Average bill length (mm)")
+plt.legend(title="Sex")
+plt.show()
+```
+
+After visualizing the average `bill_length_mm` by `species` and `sex`, we can see that for all three species (Adelie, Chinstrap, and Gentoo), the average bill length of female penguins is consistently shorter than that of male penguins. In addition, Adelie penguins have the shortest bills overall, while Chinstrap and Gentoo penguins have comparable average bill lengths when accounting for `sex`.
