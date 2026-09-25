@@ -9,7 +9,7 @@ In the summer of 2025, I was selected as one of eight individuals for the UBC Da
 
 Following my undergraduate studies, I joined MNP as a Data Analyst in Human Capital. My work involved developing reports and dashboards, analyzing workforce data, and finding ways to improve data usage and management. Moving into industry gave me a new perspective on working with data and helped me understand how analysis can be translated into meaningful insights for organizational decision-making.
 
-Currently, I am completing my MSc in Data Science at UBC where I am expanding my technical foundation and broadening my experience across different areas of data science.
+Currently, I am completing my Master of Data Science at UBC where I am expanding my technical foundation and broadening my experience across different areas of data science.
 
 ## Why Data Science? ##
 I first became interested in data science when I realized that data is all around us, often in ways we do not immediately recognize. This made me curious about the different ways data can be harnessed to better understand a given field and uncover insights that might otherwise go unnoticed.
