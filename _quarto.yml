@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Maxine Paredes"
+  search: false
   navbar:
     left:
       - href: index.qmd
@@ -16,8 +17,8 @@ website:
 format:
   html:
     theme:
-      light: [minty, brand]
-      dark: [darkly, brand]
+      - minty
+      - brand
     css: styles.css
     toc: true
 
