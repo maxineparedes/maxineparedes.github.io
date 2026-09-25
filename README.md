@@ -35,7 +35,6 @@ uv run quarto preview
 ```
 
 ## Data
-## Data
 
 My blog posts use the Palmer Penguins dataset, collected by Dr. Kristen Gorman and Palmer Station, Antarctica LTER, and released under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license. The data is bundled with the `palmerpenguins` R package and its Python port, so the build does not need the network to fetch it. Network access is only needed during steps 2 and 3 to download packages.
 
