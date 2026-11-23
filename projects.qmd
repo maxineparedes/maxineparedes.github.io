@@ -1,0 +1,6 @@
+---
+title: "Projects"
+listing:
+  contents: personal-projects
+  sort: "date desc"
+---

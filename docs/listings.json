@@ -6,5 +6,11 @@
       "/posts/r-post/index.html",
       "/posts/first-weeks/index.html"
     ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/personal-projects/dataverse-2026/dataverse.html"
+    ]
   }
 ]
