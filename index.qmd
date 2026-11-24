@@ -4,9 +4,17 @@ title: "Maxine Paredes"
 about:
   template: jolla
   image: images/headshot.jpg
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/maxine-paredes-08b0a6231/
+    - icon: github
+      text: GitHub
+      href: https://github.com/maxineparedes
 
 ---
 
 
-Hi! I'm Maxine and I'm originally from Calgary, AB. I completed my BSc in Cognitive Systems and a Minor in Data Science at UBC. Before starting this program, I was a 2025 DSSG Fellow at the UBC Data Science Institute and  working as an HRIS Data Analyst at MNP. Through the UBC MDS program, I hope to deepen my technical skills and build a more holistic understanding of the field as I work toward becoming a Data Scientist.
+
+Hi! I'm Maxine and I'm originally from Calgary, AB. I completed my BSc in Cognitive Systems and a Minor in Data Science at UBC. Before starting my master's program, I was a 2025 DSSG Fellow at the UBC Data Science Institute and  working as an HRIS Data Analyst at MNP. Through the UBC MDS program, I hope to deepen my technical skills and build a more holistic understanding of the field as I work toward becoming a Data Scientist.
 
