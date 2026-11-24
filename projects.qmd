@@ -1,6 +1,6 @@
 ---
 title: "Projects"
 listing:
-  contents: personal-projects
+  contents: "personal-projects/*/index.qmd"
   sort: "date desc"
 ---

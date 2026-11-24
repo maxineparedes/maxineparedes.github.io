@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How to Win a Datathon 101 – Maxine Paredes</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-496a71ca20b0deb91189619ea2a1a39c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Maxine Paredes</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataverse-2026-workshop" id="toc-dataverse-2026-workshop" class="nav-link active" data-scroll-target="#dataverse-2026-workshop">Dataverse 2026 Workshop</a></li>
+  <li><a href="#part-1-meet-clean-your-data" id="toc-part-1-meet-clean-your-data" class="nav-link" data-scroll-target="#part-1-meet-clean-your-data">Part 1: Meet &amp; Clean Your Data</a>
+  <ul class="collapse">
+  <li><a href="#load-the-data" id="toc-load-the-data" class="nav-link" data-scroll-target="#load-the-data">0. Load the data</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">1. Structure</a></li>
+  <li><a href="#relevant-variables" id="toc-relevant-variables" class="nav-link" data-scroll-target="#relevant-variables">2. Relevant variables</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values">3. Missing values</a>
+  <ul class="collapse">
+  <li><a href="#sneaky-hidden-missing-values" id="toc-sneaky-hidden-missing-values" class="nav-link" data-scroll-target="#sneaky-hidden-missing-values">Sneaky (hidden) missing values</a></li>
+  </ul></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">4. Data types</a></li>
+  <li><a href="#inconsistencies" id="toc-inconsistencies" class="nav-link" data-scroll-target="#inconsistencies">5. Inconsistencies</a>
+  <ul class="collapse">
+  <li><a href="#duplicates" id="toc-duplicates" class="nav-link" data-scroll-target="#duplicates">Duplicates</a></li>
+  </ul></li>
+  <li><a href="#impossible-values-outliers" id="toc-impossible-values-outliers" class="nav-link" data-scroll-target="#impossible-values-outliers">6. Impossible values &amp; outliers</a></li>
+  <li><a href="#save-our-clean-data" id="toc-save-our-clean-data" class="nav-link" data-scroll-target="#save-our-clean-data">7. Save our clean data</a></li>
+  </ul></li>
+  <li><a href="#part-2-exploratory-data-analysis-eda" id="toc-part-2-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#part-2-exploratory-data-analysis-eda">Part 2: Exploratory Data Analysis (EDA)</a>
+  <ul class="collapse">
+  <li><a href="#from-questions-to-charts" id="toc-from-questions-to-charts" class="nav-link" data-scroll-target="#from-questions-to-charts">From questions to charts</a></li>
+  <li><a href="#creating-an-eda-chart" id="toc-creating-an-eda-chart" class="nav-link" data-scroll-target="#creating-an-eda-chart">Creating an EDA Chart</a>
+  <ul class="collapse">
+  <li><a href="#example-exploring-tree-diameters" id="toc-example-exploring-tree-diameters" class="nav-link" data-scroll-target="#example-exploring-tree-diameters">EXAMPLE: Exploring Tree Diameters</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-3-data-modelling" id="toc-part-3-data-modelling" class="nav-link" data-scroll-target="#part-3-data-modelling">Part 3: Data Modelling</a>
+  <ul class="collapse">
+  <li><a href="#what-kind-of-model-do-i-need" id="toc-what-kind-of-model-do-i-need" class="nav-link" data-scroll-target="#what-kind-of-model-do-i-need">What kind of model do I need?</a></li>
+  <li><a href="#a-few-common-models-a-quick-reference" id="toc-a-few-common-models-a-quick-reference" class="nav-link" data-scroll-target="#a-few-common-models-a-quick-reference">A few common models (a quick reference)</a></li>
+  <li><a href="#the-modelling-workflow" id="toc-the-modelling-workflow" class="nav-link" data-scroll-target="#the-modelling-workflow">The modelling workflow</a></li>
+  <li><a href="#example-classification---is-this-tree-a-cherry" id="toc-example-classification---is-this-tree-a-cherry" class="nav-link" data-scroll-target="#example-classification---is-this-tree-a-cherry">EXAMPLE: Classification - Is this tree a cherry?</a>
+  <ul class="collapse">
+  <li><a href="#step-1-choose-the-target-features" id="toc-step-1-choose-the-target-features" class="nav-link" data-scroll-target="#step-1-choose-the-target-features">Step 1: Choose the target &amp; features</a></li>
+  <li><a href="#step-2-split-the-data" id="toc-step-2-split-the-data" class="nav-link" data-scroll-target="#step-2-split-the-data">Step 2: Split the data</a></li>
+  <li><a href="#step-3-start-with-a-baseline" id="toc-step-3-start-with-a-baseline" class="nav-link" data-scroll-target="#step-3-start-with-a-baseline">Step 3: Start with a baseline</a></li>
+  <li><a href="#step-4-train-compare-models" id="toc-step-4-train-compare-models" class="nav-link" data-scroll-target="#step-4-train-compare-models">Step 4: Train &amp; compare models</a></li>
+  <li><a href="#step-5-evaluate-what-does-our-client-care-about" id="toc-step-5-evaluate-what-does-our-client-care-about" class="nav-link" data-scroll-target="#step-5-evaluate-what-does-our-client-care-about">Step 5: Evaluate: what does our <em>client</em> care about?</a></li>
+  <li><a href="#match-the-model-to-your-question" id="toc-match-the-model-to-your-question" class="nav-link" data-scroll-target="#match-the-model-to-your-question">3. Match the model to your question</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><font color="purple"><b>How to Win a Datathon 101</b></font></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="dataverse-2026-workshop" class="level3">
+<h3 class="anchored" data-anchor-id="dataverse-2026-workshop">Dataverse 2026 Workshop</h3>
+<p><strong>Part 1:</strong> Meet &amp; clean your data · <strong>Part 2:</strong> Exploratory data analysis (EDA) · <strong>Part 3:</strong> Data modelling</p>
+<p><strong>The (hypothetical) client:</strong> the City of Vancouver wants to run a campaign that gets residents and visitors exploring more neighbourhoods, driving foot traffic to local businesses. They want to know <strong>which areas to promote, and when</strong>.</p>
+<p><strong>The data:</strong> the City of Vancouver’s <em>Public trees</em> dataset (City of Vancouver Open Data Portal, Open Government Licence – Vancouver).</p>
+<p>https://opendata.vancouver.ca/explore/assets/public-trees/export/</p>
+<hr>
+<p><strong>How to use this notebook</strong> 1. Set up your folders: create a folder called <code>data</code> with two subfolders inside it, <code>raw</code> and <code>processed</code>. Put <code>public-trees.csv</code> inside <code>data/raw</code> (in Colab: click the File icon on the left → right-click → <strong>New folder</strong>, then upload the file into <code>data/raw</code>). 2. Run each cell in order with <strong>Shift + Enter</strong>. 3. <strong>TRY IT YOURSELF!</strong> cells are where you get to practice. They come in three levels: Easy · Medium · Hard. 4. Stuck? Try the hint first, then click <strong>Show Solution</strong>. There’s often more than one right answer!</p>
+<div id="cell-002" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Show more columns when we print a table</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">"display.max_columns"</span>, <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="part-1-meet-clean-your-data" class="level1">
+<h1>Part 1: Meet &amp; Clean Your Data</h1>
+<p>Before we analyze anything, we need to <strong>meet our data</strong>. Just as you’d get to know a real client, you want to get to know your data: what’s in it, what’s missing, and what looks off.</p>
+<p>In real life (jobs, research <em>and</em> datathons), getting to know and cleaning your data often takes up the <strong>biggest chunk of your time</strong>. That’s completely normal, and it’s a great investment: messy data leads to wrong answers, no matter how fancy your model is.</p>
+<p>Every dataset is different, so there’s no perfect checklist. But here are six things worth checking first:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th>Question to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Structure</strong></td>
+<td>What does one row represent? How large is the dataset?</td>
+</tr>
+<tr class="even">
+<td><strong>2. Relevant variables</strong></td>
+<td>Which columns help answer our question?</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Missing values</strong></td>
+<td>Are there any missing values, and if so, how much? <em>(Tip: look out for values like <code>0</code>, <code>"N/A"</code>, etc.)</em></td>
+</tr>
+<tr class="even">
+<td><strong>4. Data types</strong></td>
+<td>Are numbers, dates and categories stored correctly?</td>
+</tr>
+<tr class="odd">
+<td><strong>5. Inconsistencies</strong></td>
+<td>Are names, formats, and units consistent?</td>
+</tr>
+<tr class="even">
+<td><strong>6. Impossible values &amp; outliers</strong></td>
+<td>Are there any values that don’t make sense?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TIP:</strong> Your first look at the data guides your cleaning decisions. There’s rarely one “right” answer, so the key is to make sensible choices and <strong>write down why</strong>.</p>
+<section id="load-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-data">0. Load the data</h2>
+<p>NOTE: This file uses <strong>semicolons (<code>;</code>)</strong>, not commas, to separate columns. If you forget <code>sep=";"</code>, everything ends up squished into one column.</p>
+<div id="cell-007" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> pd.read_csv(..., sep<span class="op">=</span>...)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>trees_raw <span class="op">=</span> trees.copy()   <span class="co"># keep an untouched copy, just in case!</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>trees.head()  <span class="co"># shows the first 5 rows of your dataframe</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">1. Structure</h2>
+<p><strong>What does one row represent? How large is the dataset?</strong></p>
+<div id="cell-010" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>trees.shape   <span class="co"># (rows, columns)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>It looks like one row = one tree… but let’s check. What are the most common “tree” names?</p>
+<div id="cell-012" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"Common name"</span>].value_counts().head(<span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>TRY IT YOURSELF! (Easy):</strong> Return the single most common tree in Vancouver with its count.</p>
+<p><em>Hint: <code>value_counts()</code> sorts from most to least common. How do you keep just the first row?</em></p>
+<div id="cell-018" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"Common name"</span>].value_counts().head(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <strong>Kwanzan flowering cherry</strong> is the most common tree in Vancouver.</p>
+</details>
+<p><strong>TRY IT YOURSELF! (Medium):</strong> How many <em>different kinds</em> of trees (common names) are there?</p>
+<p><em>Hint: Look up the pandas method <code>nunique()</code>.</em></p>
+<div id="cell-021" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"Common name"</span>].nunique()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Over 1,300! That’s a lot of categories, which is something to keep in mind before making a chart with all of them.</p>
+</details>
+<hr>
+</section>
+<section id="relevant-variables" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-variables">2. Relevant variables</h2>
+<p><strong>Which columns help answer our question?</strong></p>
+<div id="cell-025" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>trees.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Decision:</strong> we keep the columns about <strong>what</strong> the tree is, <strong>how big</strong> it is, and <strong>where</strong> it is. We drop <code>Geom</code> because it repeats the location in a messier format.</p>
+<p>We’ll also rename the columns to short, lowercase names with no spaces, which makes them much easier to type!</p>
+<div id="cell-027" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees.rename(columns<span class="op">=</span>{</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Asset ID"</span>: <span class="st">"..."</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Address"</span>: <span class="st">"address"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Common name"</span>: <span class="st">"common_name"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Genus name"</span>: <span class="st">"..."</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Species name"</span>: <span class="st">"species"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cultivar name"</span>: <span class="st">"cultivar"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"height_(m)"</span>: <span class="st">"height_m"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"diameter_(cm)"</span>: <span class="st">"..."</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Local Area"</span>: <span class="st">"neighbourhood"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"geo_point_2d"</span>: <span class="st">"location"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees.drop(columns<span class="op">=</span>[<span class="st">"Geom"</span>])</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>trees.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>TRY IT YOURSELF (Medium):</strong> Return the number of columns we have now.</p>
+<div id="cell-029" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>trees.shape[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We went from 11 to 10 columns: <code>Geom</code> was dropped (and the rest were renamed).</p>
+</details>
+<hr>
+</section>
+<section id="missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="missing-values">3. Missing values</h2>
+<p><strong>Are there any missing values, and if so, how many?</strong></p>
+<div id="cell-033" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>trees.isna().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Thousands of trees have no <code>neighbourhood</code>. Before deleting them, let’s <strong>look at where they are</strong>.</p>
+<div id="cell-035" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>trees.loc[trees[<span class="st">"neighbourhood"</span>].isna(), <span class="st">"address"</span>].value_counts().head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>2000 W Georgia St is the address of Stanley Park’s entrance!</strong> Stanley Park isn’t one of the City’s official neighbourhoods, so its trees have NA in its place.</p>
+<p><strong>Decision:</strong> if we had just deleted missing rows, we’d lose one of Vancouver’s most famous parks. For simplicity and time, we’ll label those trees “Stanley Park” and mark the rest as “Unknown”.</p>
+<div id="cell-037" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_stanley <span class="op">=</span> trees[...] <span class="op">==</span> <span class="st">"2000 W GEORGIA ST"</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>trees.loc[is_stanley, ...] <span class="op">=</span> <span class="st">"Stanley Park"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"neighbourhood"</span>] <span class="op">=</span> trees[<span class="st">"neighbourhood"</span>].fillna(...)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>(trees[<span class="st">"neighbourhood"</span>] <span class="op">==</span> <span class="st">"Stanley Park"</span>).<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="sneaky-hidden-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="sneaky-hidden-missing-values">Sneaky (hidden) missing values</h3>
+<p>Pandas only counts real blanks as missing. But missing data can hide behind values like <code>"NONE"</code>, <code>"XX"</code>, <code>0</code> or <code>"Unknown"</code>.</p>
+<div id="cell-039" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cultivar = 'NONE':"</span>, (trees[<span class="st">"cultivar"</span>] <span class="op">==</span> <span class="st">"NONE"</span>).<span class="bu">sum</span>())</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Species  = 'XX':  "</span>, (trees[<span class="st">"species"</span>] <span class="op">==</span> <span class="st">"XX"</span>).<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Decision:</strong> we turn these into real missing values (<code>NaN</code>), so pandas treats them correctly. We also drop the few trees with no name at all, since we can’t tell what they are.</p>
+<div id="cell-041" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"cultivar"</span>] <span class="op">=</span> trees[<span class="st">"cultivar"</span>].replace(<span class="st">"___"</span>, pd.NA)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"species"</span>] <span class="op">=</span> trees[<span class="st">"species"</span>].replace(<span class="st">"___"</span>, pd.NA)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees.___(subset<span class="op">=</span>[<span class="st">"___"</span>])</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>trees.___().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>TRY IT YOURSELF (Easy):</strong> Which column has the most missing values now?</p>
+<p><em>Hint: use <code>.sort_values(ascending=False)</code> as part of your solution.</em></p>
+<div id="cell-043" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>trees.isna().<span class="bu">sum</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong><code>cultivar</code></strong>, but that’s fine! The cultivar is a very specific variety name, and we don’t need it to answer our client’s question. Not every missing value needs fixing.</p>
+</details>
+<p><strong>TRY IT YOURSELF (Medium):</strong> For trees with an “Unknown” neighbourhood, find the 10 most common addresses and how many trees are at each one.</p>
+<div id="cell-046" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>trees.loc[trees[<span class="st">"neighbourhood"</span>] <span class="op">==</span> <span class="st">"Unknown"</span>, <span class="st">"address"</span>].value_counts().head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<hr>
+</section>
+</section>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">4. Data types</h2>
+<p><font color="red"><b>Additional exercises:</b> we won’t have time for these during the workshop. Try them on your own afterwards; hints and solutions are included!</font></p>
+<p><strong>Are numbers, dates and categories stored correctly?</strong></p>
+<div id="cell-050" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>trees.dtypes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Height and diameter are numbers. But <code>location</code> is stored as <strong>text</strong>, like <code>"49.2556, -123.1758"</code>, so we can’t put it on a map yet.</p>
+<p><strong>Decision:</strong> split it into two numeric columns, <code>lat</code> and <code>lon</code>.</p>
+<div id="cell-052" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees.dropna(subset<span class="op">=</span>[<span class="st">"location"</span>])   <span class="co"># one tree has no location</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>lat_lon <span class="op">=</span> trees[<span class="st">"location"</span>].<span class="bu">str</span>.split(<span class="st">","</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"lat"</span>] <span class="op">=</span> lat_lon[<span class="dv">0</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"lon"</span>] <span class="op">=</span> lat_lon[<span class="dv">1</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees.drop(columns<span class="op">=</span>[<span class="st">"location"</span>])</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>trees[[<span class="st">"common_name"</span>, <span class="st">"lat"</span>, <span class="st">"lon"</span>]].head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>TRY IT YOURSELF (Medium):</strong> Check the smallest and largest <code>lat</code> and <code>lon</code> values. Do they look like Vancouver? (Vancouver is at roughly 49.2°N, 123.1°W.)</p>
+<p><em>Hint: Try <code>.describe()</code> on just those two columns.</em></p>
+<div id="cell-054" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>trees[[<span class="st">"lat"</span>, <span class="st">"lon"</span>]].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Latitudes are all around 49.2–49.3 and longitudes around −123.0 to −123.2, so everything is in Vancouver. Sanity-checking ranges like this is a quick way to catch errors (e.g., flipped lat/lon).</p>
+</details>
+<hr>
+</section>
+<section id="inconsistencies" class="level2">
+<h2 class="anchored" data-anchor-id="inconsistencies">5. Inconsistencies</h2>
+<p><font color="red"><b>Additional exercises:</b> we won’t have time for these during the workshop. Try them on your own afterwards; hints and solutions are included!</font></p>
+<p><strong>Is the same thing written in different ways? Are there duplicates?</strong></p>
+<p>Let’s first address an example of a typo: is anything spelled “COMMOM” instead of “COMMON”?</p>
+<div id="cell-058" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>trees.loc[trees[<span class="st">"common_name"</span>].<span class="bu">str</span>.contains(<span class="st">"COMMOM"</span>), <span class="st">"common_name"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-059" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix the typo, and squash any double spaces into single spaces</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"common_name"</span>] <span class="op">=</span> (trees[<span class="st">"common_name"</span>]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                        .<span class="bu">str</span>.replace(<span class="st">"COMMOM"</span>, <span class="st">"COMMON"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                        .<span class="bu">str</span>.replace(<span class="vs">r"</span><span class="dv">\s</span><span class="op">+</span><span class="vs">"</span>, <span class="st">" "</span>, regex<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="duplicates" class="level3">
+<h3 class="anchored" data-anchor-id="duplicates">Duplicates</h3>
+<p>Each tree has a unique ID, so <code>duplicated()</code> alone finds nothing. But are some trees listed twice with <strong>different IDs</strong>? Let’s compare every column <em>except</em> the ID.</p>
+<div id="cell-061" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>other_cols <span class="op">=</span> trees.columns.drop(<span class="st">"tree_id"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>dupes <span class="op">=</span> trees.duplicated(subset<span class="op">=</span>other_cols)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Duplicate trees:"</span>, dupes.<span class="bu">sum</span>())</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: same tree, same exact spot, two different IDs</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>trees[trees.duplicated(subset<span class="op">=</span>other_cols, keep<span class="op">=</span><span class="va">False</span>)].sort_values([<span class="st">"lat"</span>, <span class="st">"lon"</span>]).head(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-062" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees[<span class="op">~</span>dupes]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>trees.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>TRY IT YOURSELF (Hard):</strong> List the common names that appear only <strong>once</strong>. Can you spot any that look like mistakes (i.e., typos vs.&nbsp;one-offs)?</p>
+<div id="cell-064" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> trees[<span class="st">"common_name"</span>].value_counts()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>counts[counts <span class="op">==</span> <span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Most are real (just rare) trees, but this is a quick way to find candidates to double-check. Real datasets almost always have a few more typos hiding somewhere!</p>
+</details>
+<hr>
+</section>
+</section>
+<section id="impossible-values-outliers" class="level2">
+<h2 class="anchored" data-anchor-id="impossible-values-outliers">6. Impossible values &amp; outliers</h2>
+<p><font color="red"><b>Additional exercises:</b> we won’t have time for these during the workshop. Try them on your own afterwards; hints and solutions are included!</font></p>
+<p><strong>Are there any values that don’t make sense?</strong></p>
+<div id="cell-068" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>trees[[<span class="st">"height_m"</span>, <span class="st">"diameter_cm"</span>]].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A tree with a diameter of <strong>0 cm</strong>? And look at that max: let’s see the biggest “trees”.</p>
+<div id="cell-070" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Diameter = 0:"</span>, (trees[<span class="st">"diameter_cm"</span>] <span class="op">==</span> <span class="dv">0</span>).<span class="bu">sum</span>())</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Height = 0:  "</span>, (trees[<span class="st">"height_m"</span>] <span class="op">==</span> <span class="dv">0</span>).<span class="bu">sum</span>())</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>trees.nlargest(<span class="dv">5</span>, <span class="st">"diameter_cm"</span>)[[<span class="st">"common_name"</span>, <span class="st">"height_m"</span>, <span class="st">"diameter_cm"</span>, <span class="st">"neighbourhood"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A pin oak that’s over <strong>66 metres wide</strong>? That’s wider than most buildings. Definitely a data entry error!</p>
+<p><strong>Decision:</strong> keep trees with a height above 0 and a diameter between 0 and 500 cm. There’s no single “right” cut-off. What matters is that you choose one sensibly and <strong>explain why</strong>.</p>
+<div id="cell-072" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>valid <span class="op">=</span> (trees[<span class="st">"height_m"</span>] <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">&amp;</span> (trees[<span class="st">"diameter_cm"</span>] <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">&amp;</span> (trees[<span class="st">"diameter_cm"</span>] <span class="op">&lt;</span> <span class="dv">500</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Removing:"</span>, (<span class="op">~</span>valid).<span class="bu">sum</span>(), <span class="st">"trees"</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> trees[valid]</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>trees[[<span class="st">"height_m"</span>, <span class="st">"diameter_cm"</span>]].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>TRY IT YOURSELF (Medium):</strong> We only filtered <em>diameter</em> outliers. What are the 5 <strong>tallest</strong> trees left?</p>
+<p><em>Hint: Use <code>nlargest()</code> in your solution.</em></p>
+<div id="cell-074" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>trees.nlargest(<span class="dv">5</span>, <span class="st">"height_m"</span>)[[<span class="st">"common_name"</span>, <span class="st">"height_m"</span>, <span class="st">"diameter_cm"</span>, <span class="st">"neighbourhood"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Three of the five tallest trees are in Kensington-Cedar Cottage, and some of them are species that are usually quite small, like the pyramidal hornbeam. Other trees like the Douglas fir are native BC trees known for growing very tall.</p>
+</details>
+<hr>
+</section>
+<section id="save-our-clean-data" class="level2">
+<h2 class="anchored" data-anchor-id="save-our-clean-data">7. Save our clean data</h2>
+<p>We’ll save our cleaned data in a new subfolder called <code>processed</code>, inside our <code>data</code> folder.</p>
+<p><strong>Why keep raw and processed data separate?</strong> - <strong>Your original data stays untouched,</strong> so you can always start over if something goes wrong. - <strong>Your team knows which file to use,</strong> so everyone works from the same clean version. - <strong>Your project stays organized</strong> as you create more files.</p>
+<div id="cell-080" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>trees.to_csv(<span class="st">"data/processed/trees_clean.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Started with </span><span class="sc">{</span><span class="bu">len</span>(trees_raw)<span class="sc">:,}</span><span class="ss"> rows, now </span><span class="sc">{</span><span class="bu">len</span>(trees)<span class="sc">:,}</span><span class="ss"> clean trees."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-2-exploratory-data-analysis-eda" class="level1">
+<h1>Part 2: Exploratory Data Analysis (EDA)</h1>
+<p>Now that our data is clean, it’s time to get curious! EDA sounds intimidating, but it’s really just <strong>asking questions about your data and answering them with simple plots and summaries</strong>.</p>
+<p>There’s no single right way to do EDA, so treat these as pointers, not rules:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pointer</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Start with a question</strong></td>
+<td>What does your client want to know? Let that guide what you look at.</td>
+</tr>
+<tr class="even">
+<td><strong>2. One variable at a time</strong></td>
+<td>What’s common? What’s rare? What’s the range?</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Compare &amp; connect</strong></td>
+<td>How do groups differ? Do two things move together?</td>
+</tr>
+<tr class="even">
+<td><strong>4. Follow the surprises</strong></td>
+<td>What looks intriguing, and why? Surprises are clues!</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Keep it simple: a few clear plots beat a dozen confusing ones.</strong></p>
+<section id="from-questions-to-charts" class="level3">
+<h3 class="anchored" data-anchor-id="from-questions-to-charts">From questions to charts</h3>
+<p><strong>Answering the questions in our four pointers also helps you decide which chart to use.</strong> The kind of question you’re asking points you to the right chart:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Chart</th>
+<th>Example from our data</th>
+<th>Tip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What’s common or rare?</td>
+<td><strong>Bar chart</strong></td>
+<td>Top 10 trees</td>
+<td>Sort the bars; go horizontal for long labels</td>
+</tr>
+<tr class="even">
+<td>How are values spread out?</td>
+<td><strong>Histogram</strong></td>
+<td>Tree heights</td>
+<td>Try a few bin sizes, since patterns can hide</td>
+</tr>
+<tr class="odd">
+<td>How do groups compare?</td>
+<td><strong>Box plot</strong> or bar chart of medians</td>
+<td>Cherry size by neighbourhood</td>
+<td>Medians hold up better against outliers</td>
+</tr>
+<tr class="even">
+<td>Do two things move together?</td>
+<td><strong>Scatter plot</strong></td>
+<td>Height vs.&nbsp;diameter</td>
+<td>Shrink or fade the dots when you have lots of data</td>
+</tr>
+<tr class="odd">
+<td>How does it change over time?</td>
+<td><strong>Line chart</strong></td>
+<td><em>(We don’t have planting dates, so not today!)</em></td>
+<td>Watch for seasonal patterns</td>
+</tr>
+<tr class="even">
+<td>Where is it happening?</td>
+<td><strong>Map</strong></td>
+<td>Cherry tree locations</td>
+<td>Compare shares (%), not just counts</td>
+</tr>
+</tbody>
+</table>
+<p>The checks we did in Part 1 aren’t just about cleaning. They help us <strong>feel confident in the information our charts communicate</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Meet-your-data check</th>
+<th>Why it matters for EDA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Missing values</strong></td>
+<td>Missing data can quietly drop out of a chart, or show up as its own bar</td>
+</tr>
+<tr class="even">
+<td><strong>Data types</strong></td>
+<td>Categories → bar charts; numbers → histograms and scatter plots</td>
+</tr>
+<tr class="odd">
+<td><strong>Inconsistencies</strong></td>
+<td>Typos split one group into two bars; duplicates inflate counts</td>
+</tr>
+<tr class="even">
+<td><strong>Impossible values &amp; outliers</strong></td>
+<td>One extreme value can stretch an axis and squash the real pattern</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The takeaway:</strong> good EDA starts with good data. The time you spent meeting your data pays off here.</p>
+<div id="cell-092" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Start here if you skipped Part 1: this loads the clean data we saved</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>trees <span class="op">=</span> pd.read_csv(<span class="st">"data/processed/trees_clean.csv"</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>trees.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="creating-an-eda-chart" class="level2">
+<h2 class="anchored" data-anchor-id="creating-an-eda-chart">Creating an EDA Chart</h2>
+<p>Every time you make a chart, walk through three quick steps: 1. <strong>What’s my question?</strong> 2. <strong>Which pointer is it?</strong> (one variable at a time? compare &amp; connect?) 3. <strong>What kind of data?</strong> (category or number?) → <strong>which chart?</strong></p>
+<section id="example-exploring-tree-diameters" class="level3">
+<h3 class="anchored" data-anchor-id="example-exploring-tree-diameters">EXAMPLE: Exploring Tree Diameters</h3>
+<ol type="1">
+<li><strong>Question:</strong> How big are Vancouver’s trees? How are trunk diameters spread out?</li>
+<li><strong>Pointer:</strong> <em>One variable at a time</em>: we’re looking at a single column, <code>diameter_cm</code>.</li>
+<li><strong>Data type:</strong> diameter is a <strong>number</strong> → so we use a <strong>histogram</strong>.</li>
+</ol>
+<div id="cell-095" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> trees[<span class="st">"diameter_cm"</span>].plot(kind<span class="op">=</span><span class="st">"hist"</span>, bins<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">"mediumseagreen"</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"How wide are Vancouver's trees?"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Trunk diameter (cm)"</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Number of trees"</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Most trees are on the left: <strong>about 78% are under 50 cm wide</strong>, and the typical (median) tree is about 25 cm. Then there’s a long tail of a few very big trees stretching to the right (that’s why the x-axis goes all the way out to almost 500 cm).</p>
+<p>That shape is called <strong>right-skewed</strong>. It suggests the city has lots of young or small street trees and only a few giants. It’s also why we often use the <strong>median</strong> rather than the mean in this dataset: those few giants pull the mean up.</p>
+<p>Notice every chart has a <strong>title</strong> and <strong>axis labels</strong>. Try to do the same in yours!</p>
+<p><strong>TRY IT YOURSELF (Easy):</strong> <strong>Which 5 neighbourhoods have the fewest trees?</strong> Before coding: which pointer is this, and which chart fits?</p>
+<p><em>Hint: Neighbourhood is a <strong>category</strong>, and we’re counting. Filter out <code>"Unknown"</code> first, then use <code>value_counts().nsmallest(5)</code> and <code>.plot(kind="barh")</code>.</em></p>
+<div id="cell-099" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>known <span class="op">=</span> trees[trees[<span class="st">"neighbourhood"</span>] <span class="op">!=</span> <span class="st">"Unknown"</span>]</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>fewest <span class="op">=</span> known[<span class="st">"neighbourhood"</span>].value_counts().nsmallest(<span class="dv">5</span>).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fewest.plot(kind<span class="op">=</span><span class="st">"barh"</span>, color<span class="op">=</span><span class="st">"mediumseagreen"</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"5 neighbourhoods with the fewest trees"</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Number of trees"</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">""</span>)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Pointer:</strong> one variable at a time (what’s rare?). <strong>Chart:</strong> bar chart, because neighbourhood is a <strong>category</strong>. Stanley Park, Strathcona, South Cambie, the West End and Fairview have the fewest trees. Many of these are smaller or denser areas, so a <em>count</em> doesn’t tell the whole story!</p>
+</details>
+<p><strong>TRY IT YOURSELF (Medium):</strong> <strong>Do the 5 most common tree families (genus) differ in height?</strong> Which pointer is this, and which chart fits?</p>
+<p><em>Hint: We’re comparing a <strong>number</strong> (height) across <strong>groups</strong> (genus). Keep only the top 5 genera with <code>.isin()</code>, then try <code>.boxplot(column="height_m", by="genus")</code>.</em></p>
+<div id="cell-102" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>top5 <span class="op">=</span> trees[<span class="st">"genus"</span>].value_counts().head(<span class="dv">5</span>).index</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> trees[trees[<span class="st">"genus"</span>].isin(top5)]</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>subset.boxplot(column<span class="op">=</span><span class="st">"height_m"</span>, by<span class="op">=</span><span class="st">"genus"</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">""</span>)   <span class="co"># removes an automatic extra title</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Tree height by genus (top 5)"</span>)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Genus"</span>)</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Height (m)"</span>)</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Pointer:</strong> compare &amp; connect (how do groups differ?). <strong>Chart:</strong> box plot, which compares a <strong>number across groups</strong>. Oaks (QUERCUS) and lindens (TILIA) tend to be the tallest, with a median of about 14 m, while maples (ACER) and cherries/plums (PRUNUS) are the shortest at about 8 m. The dots are outliers. Why does the TILIA box look squashed flat? So many lindens are recorded at exactly 13.7 m that the box collapses: another clue that heights were recorded in ranges!</p>
+</details>
+<p><strong>TRY IT YOURSELF (Hard):</strong> <strong>Do taller trees tend to be wider?</strong> Which pointer is this, and which chart fits?</p>
+<p><em>Hint: Two <strong>numbers</strong> → scatter plot. With ~180,000 trees the dots pile up, so plot a random sample with <code>trees.sample(2000, random_state=1)</code> and make the dots see-through with <code>alpha=0.3</code>.</em></p>
+<div id="cell-105" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> trees.sample(<span class="dv">2000</span>, random_state<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sample.plot(kind<span class="op">=</span><span class="st">"scatter"</span>, x<span class="op">=</span><span class="st">"diameter_cm"</span>, y<span class="op">=</span><span class="st">"height_m"</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                 alpha<span class="op">=</span><span class="fl">0.3</span>, s<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">"mediumseagreen"</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Height vs. diameter (2,000 random trees)"</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Trunk diameter (cm)"</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Height (m)"</span>)</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Pointer:</strong> compare &amp; connect (do two things move together?). <strong>Chart:</strong> scatter plot, for <strong>two numbers</strong>. The dots trend upward: taller trees tend to be wider. Did you notice the dots form <strong>horizontal stripes</strong>? That’s because heights were recorded in ranges, not measured exactly. And that lonely dot up at 70 m? It’s our pyramidal hornbeam from Part 1! Surprises worth following.</p>
+</details>
+<hr>
+</section>
+</section>
+</section>
+<section id="part-3-data-modelling" class="level1">
+<h1>Part 3: Data Modelling</h1>
+<p>EDA helped us <strong>describe</strong> our data. Modelling lets us go further: using patterns in the data to <strong>predict</strong> something, <strong>explain</strong> what matters, or <strong>find groups</strong>.</p>
+<section id="what-kind-of-model-do-i-need" class="level3">
+<h3 class="anchored" data-anchor-id="what-kind-of-model-do-i-need">What kind of model do I need?</h3>
+<p>The first question to ask: <strong>do I have a specific <em>target</em>, something I want to predict?</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Type</th>
+<th>Question it answers</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Yes → supervised</strong></td>
+<td><strong>Classification</strong></td>
+<td>Which category?</td>
+<td>Is this tree a cherry?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Regression</strong></td>
+<td>How much?</td>
+<td>How wide is this tree?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Forecasting</strong></td>
+<td>What happens next over time?</td>
+<td>How many visitors next spring?</td>
+</tr>
+<tr class="even">
+<td><strong>No → unsupervised</strong></td>
+<td><strong>Clustering</strong></td>
+<td>What natural groups exist?</td>
+<td>Neighbourhoods with similar tree mixes</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Anomaly detection</strong></td>
+<td>What’s unusual?</td>
+<td>A 70 m-tall street tree</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-few-common-models-a-quick-reference" class="level3">
+<h3 class="anchored" data-anchor-id="a-few-common-models-a-quick-reference">A few common models (a quick reference)</h3>
+<p>There are <em>lots</em> of models, from simple to complex. <strong>You don’t need to know them all</strong>: simple models are a great place to start, since they’re easier to explain and often work surprisingly well.</p>
+<p><strong>Start simple:</strong> begin with a baseline and one or two simple models. Only reach for something more complex if it clearly helps, and if you can still explain it to the judges!</p>
+</section>
+<section id="the-modelling-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="the-modelling-workflow">The modelling workflow</h3>
+<ol type="1">
+<li><strong>Choose your target &amp; features:</strong> what are you predicting, and with what clues?</li>
+<li><strong>Split the data:</strong> train on some, test on data the model hasn’t seen</li>
+<li><strong>Start with a baseline:</strong> what’s the simplest possible guess?</li>
+<li><strong>Train &amp; compare models:</strong> try a few; does one do better?</li>
+<li><strong>Evaluate:</strong> is it good <em>for your client’s question</em>?</li>
+</ol>
+<div id="cell-193" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyClassifier, DummyRegressor</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression, LinearRegression</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier, DecisionTreeRegressor</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, recall_score, mean_absolute_error</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="NoKO0Q0LrMX6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure our cherry column exists (in case you started Part 3 fresh)</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>trees[<span class="st">"is_cherry"</span>] <span class="op">=</span> (trees[<span class="st">"common_name"</span>].<span class="bu">str</span>.contains(<span class="st">"CHERRY"</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                      <span class="op">&amp;</span> <span class="op">~</span>trees[<span class="st">"common_name"</span>].<span class="bu">str</span>.contains(<span class="st">"PLUM"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="example-classification---is-this-tree-a-cherry" class="level2">
+<h2 class="anchored" data-anchor-id="example-classification---is-this-tree-a-cherry">EXAMPLE: Classification - Is this tree a cherry?</h2>
+<section id="step-1-choose-the-target-features" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-choose-the-target-features">Step 1: Choose the target &amp; features</h3>
+<ul>
+<li><strong>Target</strong> (what we predict): <code>is_cherry</code>, True or False</li>
+<li><strong>Features</strong> (the clues): <code>height_m</code>, <code>diameter_cm</code> and <code>neighbourhood</code></li>
+</ul>
+<p>Models only understand numbers, so we turn <code>neighbourhood</code> into many True/False columns, one per neighbourhood. This is called <strong>one-hot encoding</strong>, and <code>pd.get_dummies()</code> does it for us.</p>
+<div id="cell-196" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Remove trees with an unknown neighbourhood</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>model_data <span class="op">=</span> trees[trees[<span class="st">"neighbourhood"</span>] <span class="op">!=</span> <span class="st">"___"</span>]</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Target: what we want to predict</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> model_data[<span class="st">"___"</span>]</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Features: the clues we'll use (one-hot encode the neighbourhood column)</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.___(model_data[[<span class="st">"___"</span>, <span class="st">"___"</span>, <span class="st">"neighbourhood"</span>]],</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>           columns<span class="op">=</span>[<span class="st">"___"</span>])</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Check the result</span></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Rows:"</span>, X.shape[<span class="dv">0</span>], <span class="st">" Feature columns:"</span>, X.shape[<span class="dv">1</span>])</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>X.iloc[:<span class="dv">3</span>, :<span class="dv">6</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-2-split-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-split-the-data">Step 2: Split the data</h3>
+<p>We keep <strong>20% of trees hidden</strong> as a test set. The model learns from the other 80%, then we check how well it does on trees it has never seen, like studying with practice questions and then writing the real exam.</p>
+<div id="cell-199" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    ..., ..., test_size<span class="op">=</span>..., random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training trees:"</span>, <span class="bu">len</span>(X_train))</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test trees:    "</span>, <span class="bu">len</span>(X_test))</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cherries in the test set:"</span>, y_test.<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-3-start-with-a-baseline" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-start-with-a-baseline">Step 3: Start with a baseline</h3>
+<p><strong>DUMMY MODEL</strong> - the simplest possible model: <strong>always guess the most common answer</strong>, which is <em>not a cherry</em>.</p>
+<p>We’ll check two scores for every model (plus how long it takes to train): - <strong>Accuracy:</strong> what % of all trees did we label correctly? - <strong>Recall:</strong> of the real cherries, what % did we find?</p>
+<p>This small helper function trains a model and adds its scores to a results table, so we don’t repeat the same code for every model.</p>
+<div id="cell-202" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> []   <span class="co"># tip: re-run this cell to clear the table if you get duplicate rows</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate(name, model):</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> time.time()</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    model.fit(X_train, y_train)            <span class="co"># learn from the training data</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> time.time() <span class="op">-</span> start</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    predictions <span class="op">=</span> model.predict(X_test)    <span class="co"># predict on unseen trees</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    results.append({</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"model"</span>: name,</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"accuracy_%"</span>: <span class="bu">round</span>(accuracy_score(y_test, predictions) <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"recall_%"</span>: <span class="bu">round</span>(recall_score(y_test, predictions) <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"train_seconds"</span>: <span class="bu">round</span>(seconds, <span class="dv">2</span>),</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(results)</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>evaluate(<span class="st">"Baseline: always 'not a cherry'"</span>, DummyClassifier(strategy<span class="op">=</span><span class="st">"most_frequent"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>About 90% accurate… but 0% recall!</strong> Because only ~10% of trees are cherries, a model that never says “cherry” is still right 90% of the time.</p>
+<p><strong>Lesson:</strong> accuracy can be very misleading when the thing you’re looking for is rare. Always compare against a baseline!</p>
+</section>
+<section id="step-4-train-compare-models" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-train-compare-models">Step 4: Train &amp; compare models</h3>
+<p>Let’s try two common beginner-friendly models: - <strong>Logistic regression:</strong> draws a boundary between “cherry” and “not cherry” (despite the name, it’s for classification!) - <strong>Decision tree:</strong> learns a series of yes/no questions, like a flowchart. <code>max_depth=5</code> limits it to 5 questions deep so it doesn’t memorize the training data.</p>
+<div id="cell-206" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>evaluate(<span class="st">"Logistic regression"</span>, LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>))</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>evaluate(<span class="st">"Decision tree"</span>, DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">5</span>, random_state<span class="op">=</span><span class="dv">42</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Both models beat the baseline’s accuracy, but only by a little, and they still miss <strong>most</strong> of the cherries.</p>
+</section>
+<section id="step-5-evaluate-what-does-our-client-care-about" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-evaluate-what-does-our-client-care-about">Step 5: Evaluate: what does our <em>client</em> care about?</h3>
+<p>If the City wants to find blossom spots, <strong>missing cherries is worse than a few false alarms</strong>. We can tell the model that cherries matter more with <code>class_weight="balanced"</code>.</p>
+<div id="cell-210" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>tree_balanced <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">5</span>, random_state<span class="op">=</span><span class="dv">42</span>, class_weight<span class="op">=</span><span class="st">"balanced"</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>evaluate(<span class="st">"Decision tree (cherries matter more)"</span>, tree_balanced)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>The trade-off:</strong> accuracy drops to about 84%, but now we catch about <strong>62% of the cherries</strong>, up from 24%. Which model is “best” depends on what your client cares about. That’s a decision worth explaining to the judges!</p>
+<p><strong>A model is only as good as its features.</strong> With only size and location, there’s a limit to how well we can spot cherries. If we had flower colour or bloom time, it would do much better.</p>
+<p><strong>Lesson:</strong> more complex doesn’t always mean more accurate. A slightly better score isn’t always worth losing the ability to explain your model.</p>
+</section>
+<section id="match-the-model-to-your-question" class="level3">
+<h3 class="anchored" data-anchor-id="match-the-model-to-your-question">3. Match the model to your question</h3>
+<p>There’s no single “best” model; it depends on what your client needs. For example:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>If your client wants to…</th>
+<th>A good choice might be…</th>
+<th>Because…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Understand <em>why</em></strong> (explain to the City)</td>
+<td>A small decision tree or logistic regression</td>
+<td>Easy to read and explain</td>
+</tr>
+<tr class="even">
+<td><strong>Catch as many cherries as possible</strong></td>
+<td>A model with <code>class_weight="balanced"</code></td>
+<td>It focuses on the rare group</td>
+</tr>
+<tr class="odd">
+<td><strong>Squeeze out the best score</strong> (e.g.&nbsp;a leaderboard)</td>
+<td>Random forest or gradient boosting</td>
+<td>Often a bit more accurate, if you have time</td>
+</tr>
+</tbody>
+</table>
+<p>For our client (the City promoting blossom spots), we’d probably pick the <strong>simple balanced decision tree</strong>: it catches most cherries <em>and</em> we can explain how it works.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
