@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-08-14">
+<meta name="description" content="Using survey data, statistical modelling, and a RAG chatbot to demonstrate how mentorship shapes life outcomes for youth across Canada.">
 
-<title>index – Maxine Paredes</title>
+<title>Exploring the Impact of Youth Mentorship – Maxine Paredes</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -105,17 +107,108 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-question" id="toc-the-question" class="nav-link" data-scroll-target="#the-question">The question</a></li>
+  <li><a href="#what-we-did" id="toc-what-we-did" class="nav-link" data-scroll-target="#what-we-did">What we did</a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key findings</a></li>
+  <li><a href="#my-role" id="toc-my-role" class="nav-link" data-scroll-target="#my-role">My role</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exploring the Impact of Youth Mentorship</h1>
+<p class="subtitle lead">UBC DSI’s Data Science for Social Good Program × Mentor Canada</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Statistics</div>
+    <div class="quarto-category">RAG</div>
+    <div class="quarto-category">NLP</div>
+    <div class="quarto-category">LangChain</div>
+    <div class="quarto-category">Pinecone</div>
+    <div class="quarto-category">Mistral</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Using survey data, statistical modelling, and a RAG chatbot to demonstrate how mentorship shapes life outcomes for youth across Canada.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>After the completion of my undergraduate degree, I spent the summer as a Data Science for Social Good Fellow at the UBC Data Science Institute. With my teammates Isobel Adams and Vincy Huang, I partnered with Mentor Canada, a national nonprofit working to expand access to quality mentorship and reduce gaps in who gets a mentor.</p>
+<p>Mentor Canada relies heavily on grant funding, so our goal was to strengthen the evidence base for their grant applications using clear data-driven insights.</p>
+</section>
+<section id="the-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-question">The question</h2>
+<blockquote class="blockquote">
+<p><strong>How does mentorship shape long-term life outcomes for youth, especially those from underserved communities?</strong></p>
+</blockquote>
+<p><strong>The data:</strong> Mentor Canada’s national <em>Mapping the Mentoring Gap</em> survey, with 2,838 responses from young adults aged 18–30. It covers their current life outcomes (income, education, mental health) and looks back at their childhood: socioeconomic background, whether they had a mentor between ages 6 and 18, the quality of that mentorship, and the barriers they faced.</p>
+</section>
+<section id="what-we-did" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-did">What we did</h2>
+<p><strong>Cleaning a 700+ column survey:</strong> We took the raw survey from 737 columns down to a clean, analysis-ready dataset (n = 2,396) in R: standardizing responses, handling ambiguous answers like “Unsure”, reverse-coding Likert scales, and comparing imputation approaches (mean-mode with tidymodels and k-NN with FAISS).</p>
+<p><strong>Statistical modelling:</strong> We used logistic, ordinal logistic and linear regression, permutation-based ANOVA, and specification curve analysis to check how robust our findings were.</p>
+<p><strong>Finding subgroups:</strong> Latent Class Analysis (LCA) revealed three groups of youth, from highest- to lowest-performing across employment, education, mental health, belonging and social support. We also explored autoencoder-based clustering.</p>
+<p><strong>A RAG chatbot for grant writing:</strong> We built a Retrieval-Augmented Generation system grounded in Mentor Canada’s own reports, so their team can quickly pull evidence when writing grants. It uses an OCR pipeline (pytesseract), LangChain, mxbai-embed-large embeddings, a Pinecone vector store and the open-source Mistral model, evaluated with an LLM-as-a-judge approach (average faithfulness 0.95, answer relevancy 0.86).</p>
+</section>
+<section id="key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings">Key findings</h2>
+<ul>
+<li><strong>Mentorship boosts education -</strong> For youth from low-SES backgrounds, having a mentor was linked to a 10% higher high school graduation rate. Mentorship also helped low-SES youth more than high-SES youth in pursuing further education.</li>
+<li><strong>Mentorship helps close the income gap -</strong> The median income gap between high- and low-SES youth was about $13,600 without a mentor, compared with about $7,200 with one.</li>
+<li><strong>Mentorship supports mental health -</strong> Youth with a mentor reported better mental health. Formal mentorship was linked to 2.6× higher odds of reporting good mental health.</li>
+<li><strong>Barriers aren’t felt equally -</strong> 63% of low-SES youth reported unmet mentoring needs, compared with 46% of high-SES youth. Low-SES youth were also more likely to be waitlisted for a program.</li>
+</ul>
+<p>These are associations, not proof of cause and effect, and they come from a single survey. Still, together they make a strong case for making mentorship more accessible, especially for underserved youth.</p>
+</section>
+<section id="my-role" class="level2">
+<h2 class="anchored" data-anchor-id="my-role">My role</h2>
+<ul>
+<li><strong>Statistical modelling -</strong> I ran regression models (logistic, ordinal logistic and linear) to find what predicts youth outcomes such as further education, unmet mentoring needs and mental health, and to test whether mentorship narrows the gap between low- and high-SES youth.</li>
+<li><strong>Built the RAG chatbot -</strong> I worked on the full pipeline: turning Mentor Canada’s scanned PDFs into searchable text with OCR, splitting it into chunks, creating embeddings, storing them in a Pinecone vector database, and generating answers with the open-source Mistral model. I also designed the prompts to keep answers grounded in Mentor Canada’s own sources.</li>
+<li><strong>Evaluated the chatbot -</strong> I helped set up an LLM-as-a-judge evaluation to check that answers were faithful to the sources and relevant to the question, and to make the test questions more realistic.</li>
+</ul>
+<p><strong>Tools:</strong> R (tidyverse, tidymodels, poLCA), Python (statsmodels, PyTorch, FAISS), LangChain, Pinecone, Mistral</p>
+</section>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<p><a href="final_written_report.pdf" class="btn btn-outline-primary" role="button">Read the final report (PDF)</a> <a href="slides.pdf" class="btn btn-outline-primary" role="button">View the slides (PDF)</a></p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

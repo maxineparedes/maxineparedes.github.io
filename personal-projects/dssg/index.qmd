@@ -1,0 +1,51 @@
+---
+title: "Exploring the Impact of Youth Mentorship"
+subtitle: "UBC DSI's Data Science for Social Good Program × Mentor Canada"
+description: "Using survey data, statistical modelling, and a RAG chatbot to demonstrate how mentorship shapes life outcomes for youth across Canada."
+date: 2025-08-14
+image: dssg.png
+categories: [ R, Python, Statistics, RAG, NLP, LangChain, Pinecone, Mistral]
+---
+
+## Overview
+
+After the completion of my undergraduate degree, I spent the summer as a Data Science for Social Good Fellow at the UBC Data Science Institute. With my teammates Isobel Adams and Vincy Huang, I partnered with Mentor Canada, a national nonprofit working to expand access to quality mentorship and reduce gaps in who gets a mentor.
+
+Mentor Canada relies heavily on grant funding, so our goal was to strengthen the evidence base for their grant applications using clear data-driven insights.
+
+## The question
+
+> **How does mentorship shape long-term life outcomes for youth, especially those from underserved communities?**
+
+**The data:** Mentor Canada's national *Mapping the Mentoring Gap* survey, with 2,838 responses from young adults aged 18–30. It covers their current life outcomes (income, education, mental health) and looks back at their childhood: socioeconomic background, whether they had a mentor between ages 6 and 18, the quality of that mentorship, and the barriers they faced.
+
+## What we did
+
+**Cleaning a 700+ column survey:** We took the raw survey from 737 columns down to a clean, analysis-ready dataset (n = 2,396) in R: standardizing responses, handling ambiguous answers like "Unsure", reverse-coding Likert scales, and comparing imputation approaches (mean-mode with tidymodels and k-NN with FAISS).
+
+**Statistical modelling:** We used logistic, ordinal logistic and linear regression, permutation-based ANOVA, and specification curve analysis to check how robust our findings were.
+
+**Finding subgroups:** Latent Class Analysis (LCA) revealed three groups of youth, from highest- to lowest-performing across employment, education, mental health, belonging and social support. We also explored autoencoder-based clustering.
+
+**A RAG chatbot for grant writing:** We built a Retrieval-Augmented Generation system grounded in Mentor Canada's own reports, so their team can quickly pull evidence when writing grants. It uses an OCR pipeline (pytesseract), LangChain, mxbai-embed-large embeddings, a Pinecone vector store and the open-source Mistral model, evaluated with an LLM-as-a-judge approach (average faithfulness 0.95, answer relevancy 0.86).
+
+## Key findings
+
+- **Mentorship boosts education -** For youth from low-SES backgrounds, having a mentor was linked to a 10% higher high school graduation rate. Mentorship also helped low-SES youth more than high-SES youth in pursuing further education.
+- **Mentorship helps close the income gap -** The median income gap between high- and low-SES youth was about $13,600 without a mentor, compared with about $7,200 with one.
+- **Mentorship supports mental health -** Youth with a mentor reported better mental health. Formal mentorship was linked to 2.6× higher odds of reporting good mental health.
+- **Barriers aren't felt equally -** 63% of low-SES youth reported unmet mentoring needs, compared with 46% of high-SES youth. Low-SES youth were also more likely to be waitlisted for a program.
+
+These are associations, not proof of cause and effect, and they come from a single survey. Still, together they make a strong case for making mentorship more accessible, especially for underserved youth.
+
+## My role
+- **Statistical modelling -** I ran regression models (logistic, ordinal logistic and linear) to find what predicts youth outcomes such as further education, unmet mentoring needs and mental health, and to test whether mentorship narrows the gap between low- and high-SES youth.
+- **Built the RAG chatbot -** I worked on the full pipeline: turning Mentor Canada's scanned PDFs into searchable text with OCR, splitting it into chunks, creating embeddings, storing them in a Pinecone vector database, and generating answers with the open-source Mistral model. I also designed the prompts to keep answers grounded in Mentor Canada's own sources.
+- **Evaluated the chatbot -** I helped set up an LLM-as-a-judge evaluation to check that answers were faithful to the sources and relevant to the question, and to make the test questions more realistic.
+
+**Tools:** R (tidyverse, tidymodels, poLCA), Python (statsmodels, PyTorch, FAISS), LangChain, Pinecone, Mistral
+
+## Materials
+
+[Read the final report (PDF)](final_written_report.pdf){.btn .btn-outline-primary role="button"}
+[View the slides (PDF)](slides.pdf){.btn .btn-outline-primary role="button"}
