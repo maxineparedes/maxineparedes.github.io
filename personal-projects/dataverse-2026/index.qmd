@@ -4,7 +4,7 @@ subtitle: "Dataverse 2026"
 description: "A beginner-friendly workshop on data wrangling, EDA and modelling in Python, built around the City of Vancouver's Public trees dataset."
 date: 2026-11-20
 image: dataverse-workshop.png
-categories: [Python, pandas, scikit-learn, Jupyter Notebook, Google Colab, Workshop, Teaching]
+categories: [Python, pandas, scikit-learn, Jupyter, Google Colab, Workshop]
 resources:
   - dataverse_2026_PARTICIPANT.ipynb
   - slides.pdf
