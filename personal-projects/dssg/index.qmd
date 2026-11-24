@@ -43,6 +43,8 @@ These are associations, not proof of cause and effect, and they come from a sing
 - **Built the RAG chatbot -** I worked on the full pipeline: turning Mentor Canada's scanned PDFs into searchable text with OCR, splitting it into chunks, creating embeddings, storing them in a Pinecone vector database, and generating answers with the open-source Mistral model. I also designed the prompts to keep answers grounded in Mentor Canada's own sources.
 - **Evaluated the chatbot -** I helped set up an LLM-as-a-judge evaluation to check that answers were faithful to the sources and relevant to the question, and to make the test questions more realistic.
 
+<iframe src="slides.pdf" width="100%" height="500" style="border: none;" title="How to Win a Datathon 101 slides"></iframe>
+
 **Tools:** R (tidyverse, tidymodels, poLCA), Python (statsmodels, PyTorch, FAISS), LangChain, Pinecone, Mistral
 
 ## Materials
