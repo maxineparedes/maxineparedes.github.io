@@ -150,8 +150,8 @@
     "objectID": "personal-projects/dataverse-2026/index.html#overview",
     "href": "personal-projects/dataverse-2026/index.html#overview",
     "title": "How to Win a Datathon 101",
-    "section": "Overview",
-    "text": "Overview\nI designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.\nParticipants worked through a Jupyter notebook alongside the slides, with TRY IT YOURSELF! exercises at three levels (Easy, Medium, Hard) and hidden solutions to check their work."
+    "section": "",
+    "text": "I designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.\nParticipants worked through a Jupyter notebook alongside the slides, with TRY IT YOURSELF! exercises at three levels (Easy, Medium, Hard) and hidden solutions to check their work."
   },
   {
     "objectID": "personal-projects/dataverse-2026/index.html#the-case",
@@ -172,14 +172,14 @@
     "href": "personal-projects/dataverse-2026/index.html#key-takeaways",
     "title": "How to Win a Datathon 101",
     "section": "Key takeaways",
-    "text": "Key takeaways\n\nLook before you clean. Understand your data’s condition and limits before changing anything.\nEvery fix is a decision. Be able to explain your choices, and write them down as you go.\nDon’t delete blindly. Missing or odd data might be telling you something more than what’s on the surface.\nStart simple. Begin with a baseline, pick the score that matters to your client, and only add complexity if it clearly helps."
+    "text": "Key takeaways\n\nLook before you clean. Understand your data’s condition and limits before changing anything.\nEvery fix is a decision. Be able to explain your choices, and write them down as you go.\nDon’t delete blindly. Missing or odd data might be telling you something more than what’s on the surface.\nStart simple. Begin with a baseline, pick the score that matters to your client, and only add complexity if it clearly helps.\n\n\nSlides\n\n\nTools: Python, pandas, matplotlib, scikit-learn, Jupyter / Google Colab"
   },
   {
     "objectID": "personal-projects/dataverse-2026/index.html#materials",
     "href": "personal-projects/dataverse-2026/index.html#materials",
     "title": "How to Win a Datathon 101",
     "section": "Materials",
-    "text": "Materials\n\n\nDownload the slides (PDF)\n\n\nDownload the notebook (.ipynb)\n\n\n\n\n\nOpen In Colab\n\n\nTo run the notebook, download public-trees.csv from the City of Vancouver Open Data Portal and follow the setup steps at the top.\n\nSlides\n\n\nTools: Python, pandas, matplotlib, scikit-learn, Jupyter / Google Colab"
+    "text": "Materials\n\n\nDownload the slides (PDF)\n\n\nDownload the notebook (.ipynb)\n\n\n\n\n\nOpen In Colab\n\n\nTo run the notebook, download public-trees.csv from the City of Vancouver Open Data Portal and follow the setup steps at the top."
   },
   {
     "objectID": "personal-projects/dssg/thumbnail.html#overview",
@@ -256,7 +256,7 @@
     "href": "personal-projects/dssg/index.html#my-role",
     "title": "Exploring the Impact of Youth Mentorship",
     "section": "My role",
-    "text": "My role\n\nStatistical modelling - I ran regression models (logistic, ordinal logistic and linear) to find what predicts youth outcomes such as further education, unmet mentoring needs and mental health, and to test whether mentorship narrows the gap between low- and high-SES youth.\nBuilt the RAG chatbot - I worked on the full pipeline: turning Mentor Canada’s scanned PDFs into searchable text with OCR, splitting it into chunks, creating embeddings, storing them in a Pinecone vector database, and generating answers with the open-source Mistral model. I also designed the prompts to keep answers grounded in Mentor Canada’s own sources.\nEvaluated the chatbot - I helped set up an LLM-as-a-judge evaluation to check that answers were faithful to the sources and relevant to the question, and to make the test questions more realistic.\n\nTools: R (tidyverse, tidymodels, poLCA), Python (statsmodels, PyTorch, FAISS), LangChain, Pinecone, Mistral"
+    "text": "My role\n\nStatistical modelling - I ran regression models (logistic, ordinal logistic and linear) to find what predicts youth outcomes such as further education, unmet mentoring needs and mental health, and to test whether mentorship narrows the gap between low- and high-SES youth.\nBuilt the RAG chatbot - I worked on the full pipeline: turning Mentor Canada’s scanned PDFs into searchable text with OCR, splitting it into chunks, creating embeddings, storing them in a Pinecone vector database, and generating answers with the open-source Mistral model. I also designed the prompts to keep answers grounded in Mentor Canada’s own sources.\nEvaluated the chatbot - I helped set up an LLM-as-a-judge evaluation to check that answers were faithful to the sources and relevant to the question, and to make the test questions more realistic.\n\n\n\nTools: R (tidyverse, tidymodels, poLCA), Python (statsmodels, PyTorch, FAISS), LangChain, Pinecone, Mistral"
   },
   {
     "objectID": "personal-projects/dssg/index.html#materials",
@@ -271,5 +271,12 @@
     "title": "Exploring the Impact of Youth Mentorship",
     "section": "",
     "text": "After the completion of my undergraduate degree, I spent the summer as a Data Science for Social Good Fellow at the UBC Data Science Institute. With my teammates Isobel Adams and Vincy Huang, I partnered with Mentor Canada, a national nonprofit working to expand access to quality mentorship and reduce gaps in who gets a mentor.\nMentor Canada relies heavily on grant funding, so our goal was to strengthen the evidence base for their grant applications using clear data-driven insights."
+  },
+  {
+    "objectID": "personal-projects/dataverse-2026/index.html",
+    "href": "personal-projects/dataverse-2026/index.html",
+    "title": "How to Win a Datathon 101",
+    "section": "",
+    "text": "I designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.\nParticipants worked through a Jupyter notebook alongside the slides, with TRY IT YOURSELF! exercises at three levels (Easy, Medium, Hard) and hidden solutions to check their work."
   }
 ]

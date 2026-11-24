@@ -10,8 +10,6 @@ resources:
   - slides.pdf
 ---
 
-![](dataverse-workshop.png){width=50%}
-
 ## Overview
 
 I designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.
@@ -41,6 +39,12 @@ Participants worked through a Jupyter notebook alongside the slides, with TRY IT
 - **Don't delete blindly.** Missing or odd data might be telling you something more than what's on the surface.
 - **Start simple.** Begin with a baseline, pick the score that matters to your client, and only add complexity if it clearly helps.
 
+### Slides
+
+<iframe src="slides.pdf" width="100%" height="500" style="border: none;" title="How to Win a Datathon 101 slides"></iframe>
+
+**Tools:** Python, pandas, matplotlib, scikit-learn, Jupyter / Google Colab
+
 ## Materials
 
 ::: {.grid}
@@ -55,9 +59,3 @@ Participants worked through a Jupyter notebook alongside the slides, with TRY IT
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maxineparedes/maxineparedes.github.io/blob/main/projects/dataverse-workshop/dataverse_2026_PARTICIPANT.ipynb)
 
 To run the notebook, download `public-trees.csv` from the [City of Vancouver Open Data Portal](https://opendata.vancouver.ca/explore/assets/public-trees/export/) and follow the setup steps at the top.
-
-### Slides
-
-<iframe src="slides.pdf" width="100%" height="500" style="border: none;" title="How to Win a Datathon 101 slides"></iframe>
-
-**Tools:** Python, pandas, matplotlib, scikit-learn, Jupyter / Google Colab
