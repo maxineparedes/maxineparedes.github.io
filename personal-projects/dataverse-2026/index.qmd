@@ -26,7 +26,7 @@ Participants worked through a Jupyter notebook alongside the slides, with TRY IT
 
 ## What we covered
 
-**Part 1: Meet & clean your data.** Six checks to run on any new dataset: structure, relevant variables, missing values, data types, inconsistencies, and impossible values & outliers. One highlight: about 3,900 trees had no neighbourhood, and most of them turned out to be in Stanley Park. If we had preemptively deleted them, we would have lost data for one of Vancouver's most famous parks!
+**Part 1: Meet & clean your data.** Six checks to run on any new dataset: structure, relevant variables, missing values, data types, inconsistencies, and impossible values & outliers. One highlight: about 3,900 trees had no neighbourhood, and most of them turned out to be in Stanley Park. If we had preemptively deleted them, we would have lost data for one of Vancouver's most famous parks.
 
 **Part 2: Exploratory data analysis.** Four pointers for EDA (i.e., start with a question, one variable at a time, compare & connect, follow the surprises) and how the kind of question you ask points you to the right chart.
 

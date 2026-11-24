@@ -39,7 +39,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "How to Win a Datathon 101\n\n\nDataverse 2026\n\n\nA beginner-friendly workshop on data wrangling, EDA and modelling in Python, built around the City of Vancouver’s Public trees dataset.\n\n\n\n\n\nNov 20, 2026\n\n\n\n\n\nNo matching items"
+    "text": "How to Win a Datathon 101\n\n\nDataverse 2026\n\n\n\nPython\n\npandas\n\nscikit-learn\n\nJupyter Notebook\n\nGoogle Colab\n\nWorkshop\n\nTeaching\n\n\n\nA beginner-friendly workshop on data wrangling, EDA and modelling in Python, built around the City of Vancouver’s Public trees dataset.\n\n\n\nNov 20, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/python-post/index.html",
@@ -151,7 +151,7 @@
     "href": "personal-projects/dataverse-2026/index.html#overview",
     "title": "How to Win a Datathon 101",
     "section": "Overview",
-    "text": "Overview\nI designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.\nParticipants worked through a Jupyter notebook alongside the slides, with TRY IT YOURSELF! exercises at three levels (Easy · Medium · Hard) and hidden solutions to check their work."
+    "text": "Overview\nI designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.\nParticipants worked through a Jupyter notebook alongside the slides, with TRY IT YOURSELF! exercises at three levels (Easy, Medium, Hard) and hidden solutions to check their work."
   },
   {
     "objectID": "personal-projects/dataverse-2026/index.html#the-case",
@@ -165,14 +165,14 @@
     "href": "personal-projects/dataverse-2026/index.html#what-we-covered",
     "title": "How to Win a Datathon 101",
     "section": "What we covered",
-    "text": "What we covered\nPart 1: Meet & clean your data. Six checks to run on any new dataset: structure, relevant variables, missing values, data types, inconsistencies, and impossible values & outliers. One highlight: about 3,900 trees had no neighbourhood, and most of them turned out to be in Stanley Park. If we had preemptively deleted them, we would have lost data for one of Vancouver’s most famous parks!\nPart 2: Exploratory data analysis. Four pointers for EDA (i.e., start with a question, one variable at a time, compare & connect, follow the surprises) and how the kind of question you ask points you to the right chart.\nPart 3: Data modelling. A full classification walkthrough: can we predict whether a tree is a cherry from its size and neighbourhood? We compared a baseline against logistic regression and a decision tree, and saw why accuracy can be misleading when the thing you’re looking for is rare. A dummy model that never says “cherry” is still ~90% accurate! Weighting the rare class brought recall from ~24% to ~62%.\nTop secret: a blueprint for a winning project. Strong technical work is the foundation, but winning projects also have impact and tell a story."
+    "text": "What we covered\nPart 1: Meet & clean your data. Six checks to run on any new dataset: structure, relevant variables, missing values, data types, inconsistencies, and impossible values & outliers. One highlight: about 3,900 trees had no neighbourhood, and most of them turned out to be in Stanley Park. If we had preemptively deleted them, we would have lost data for one of Vancouver’s most famous parks.\nPart 2: Exploratory data analysis. Four pointers for EDA (i.e., start with a question, one variable at a time, compare & connect, follow the surprises) and how the kind of question you ask points you to the right chart.\nPart 3: Data modelling. A full classification walkthrough: can we predict whether a tree is a cherry from its size and neighbourhood? We compared a baseline against logistic regression and a decision tree, and saw why accuracy can be misleading when the thing you’re looking for is rare. A dummy model that never says “cherry” is still ~90% accurate! Weighting the rare class brought recall from ~24% to ~62%.\nTop secret: a blueprint for a winning project. Strong technical work is the foundation, but winning projects also have impact and tell a story."
   },
   {
     "objectID": "personal-projects/dataverse-2026/index.html#key-takeaways",
     "href": "personal-projects/dataverse-2026/index.html#key-takeaways",
     "title": "How to Win a Datathon 101",
     "section": "Key takeaways",
-    "text": "Key takeaways\n\nLook before you clean. Understand your data’s condition and limits before changing anything.\nEvery fix is a decision. Be able to explain your choices, and write them down as you go.\nDon’t delete blindly. Missing or odd data might be telling you something.\nStart simple. Begin with a baseline, pick the score that matters to your client, and only add complexity if it clearly helps."
+    "text": "Key takeaways\n\nLook before you clean. Understand your data’s condition and limits before changing anything.\nEvery fix is a decision. Be able to explain your choices, and write them down as you go.\nDon’t delete blindly. Missing or odd data might be telling you something more than what’s on the surface.\nStart simple. Begin with a baseline, pick the score that matters to your client, and only add complexity if it clearly helps."
   },
   {
     "objectID": "personal-projects/dataverse-2026/index.html#materials",

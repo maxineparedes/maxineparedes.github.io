@@ -69,9 +69,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-subtitle','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -194,32 +194,48 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDcGFuZGFzJTJDc2Npa2l0LWxlYXJuJTJDSnVweXRlciUyME5vdGVib29rJTJDR29vZ2xlJTIwQ29sYWIlMkNXb3Jrc2hvcCUyQ1RlYWNoaW5n" data-listing-date-sort="1795161600000" data-listing-file-modified-sort="1795479581775" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="461">
-<div class="thumbnail"><a href="./personal-projects/dataverse-2026/index.html" class="no-external">
-
-<img loading="lazy" src="./personal-projects/dataverse-2026/dataverse-workshop.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./personal-projects/dataverse-2026/index.html" class="no-external">How to Win a Datathon 101</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./personal-projects/dataverse-2026/index.html" class="no-external">Dataverse 2026</a>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDcGFuZGFzJTJDc2Npa2l0LWxlYXJuJTJDSnVweXRlciUyME5vdGVib29rJTJDR29vZ2xlJTIwQ29sYWIlMkNXb3Jrc2hvcCUyQ1RlYWNoaW5n" data-listing-date-sort="1795161600000" data-listing-file-modified-sort="1795480164125" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="465">
+<a href="./personal-projects/dataverse-2026/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./personal-projects/dataverse-2026/dataverse-workshop.png" class="thumbnail-image card-img" style="height: 400px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How to Win a Datathon 101
+</h5>
+<div class="card-subtitle listing-subtitle">
+Dataverse 2026
 </div>
-<div class="delink listing-description"><a href="./personal-projects/dataverse-2026/index.html" class="no-external">
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cGFuZGFz'); return false;">pandas</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2Npa2l0LWxlYXJu'); return false;">scikit-learn</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SnVweXRlciUyME5vdGVib29r'); return false;">Jupyter Notebook</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R29vZ2xlJTIwQ29sYWI='); return false;">Google Colab</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('V29ya3Nob3A='); return false;">Workshop</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VGVhY2hpbmc='); return false;">Teaching</div>
+
+</div>
+<div class="card-text listing-description delink">
 <p>A beginner-friendly workshop on data wrangling, EDA and modelling in Python, built around the City of Vancouver’s Public trees dataset.</p>
-</a></div>
 </div>
-<div class="metadata">
-<a href="./personal-projects/dataverse-2026/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 20, 2026
 </div>
-</a>
 </div>
+</div>
+</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>

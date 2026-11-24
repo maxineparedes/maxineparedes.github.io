@@ -3,4 +3,8 @@ title: "Projects"
 listing:
   contents: "personal-projects/*/index.qmd"
   sort: "date desc"
+  type: grid
+  grid-columns: 3
+  image-height: 400px
+  fields: [image, title, subtitle, description, date, categories]
 ---

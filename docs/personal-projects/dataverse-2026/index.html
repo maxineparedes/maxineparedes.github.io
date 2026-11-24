@@ -169,19 +169,19 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="dataverse-workshop.png" class="img-fluid" style="width:50.0%"></p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>I designed and led <strong>How to Win a Datathon 101</strong>, a hands-on workshop for <strong>Dataverse 2026</strong>. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.</p>
-<p>Participants worked through a Jupyter notebook alongside the slides, with <strong>TRY IT YOURSELF!</strong> exercises at three levels (Easy · Medium · Hard) and hidden solutions to check their work.</p>
+<p>I designed and led How to Win a Datathon 101, a hands-on workshop for Dataverse 2026. The goal was to give beginners a repeatable workflow they could take straight into a datathon: meet your data, explore it with purpose, model only the insights that you can explain, and tell a story the judges will remember.</p>
+<p>Participants worked through a Jupyter notebook alongside the slides, with TRY IT YOURSELF! exercises at three levels (Easy, Medium, Hard) and hidden solutions to check their work.</p>
 </section>
 <section id="the-case" class="level2">
 <h2 class="anchored" data-anchor-id="the-case">The case</h2>
 <blockquote class="blockquote">
-<p><strong>The (hypothetical) client:</strong> the City of Vancouver wants to run a campaign that gets residents and visitors exploring more neighbourhoods, driving foot traffic to local businesses. They want to know <strong>which areas to promote, and when</strong>.</p>
+<p><strong>The (hypothetical) client:</strong> the City of Vancouver wants to run a campaign that gets residents and visitors exploring more neighbourhoods, driving foot traffic to local businesses. They want to know which areas to promote, and when.</p>
 </blockquote>
 <p><strong>The data:</strong> the City of Vancouver’s <a href="https://opendata.vancouver.ca/explore/assets/public-trees/export/">Public trees</a> dataset, with ~184,000 trees (Open Government Licence – Vancouver).</p>
 </section>
 <section id="what-we-covered" class="level2">
 <h2 class="anchored" data-anchor-id="what-we-covered">What we covered</h2>
-<p><strong>Part 1: Meet &amp; clean your data.</strong> Six checks to run on any new dataset: structure, relevant variables, missing values, data types, inconsistencies, and impossible values &amp; outliers. One highlight: about 3,900 trees had no neighbourhood, and most of them turned out to be in Stanley Park. If we had preemptively deleted them, we would have lost data for one of Vancouver’s most famous parks!</p>
+<p><strong>Part 1: Meet &amp; clean your data.</strong> Six checks to run on any new dataset: structure, relevant variables, missing values, data types, inconsistencies, and impossible values &amp; outliers. One highlight: about 3,900 trees had no neighbourhood, and most of them turned out to be in Stanley Park. If we had preemptively deleted them, we would have lost data for one of Vancouver’s most famous parks.</p>
 <p><strong>Part 2: Exploratory data analysis.</strong> Four pointers for EDA (i.e., start with a question, one variable at a time, compare &amp; connect, follow the surprises) and how the kind of question you ask points you to the right chart.</p>
 <p><strong>Part 3: Data modelling.</strong> A full classification walkthrough: <em>can we predict whether a tree is a cherry from its size and neighbourhood?</em> We compared a baseline against logistic regression and a decision tree, and saw why accuracy can be misleading when the thing you’re looking for is rare. A dummy model that never says “cherry” is still ~90% accurate! Weighting the rare class brought recall from ~24% to ~62%.</p>
 <p><strong>Top secret: a blueprint for a winning project.</strong> Strong technical work is the foundation, but winning projects also have impact and tell a story.</p>
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Look before you clean.</strong> Understand your data’s condition and limits before changing anything.</li>
 <li><strong>Every fix is a decision.</strong> Be able to explain your choices, and write them down as you go.</li>
-<li><strong>Don’t delete blindly.</strong> Missing or odd data might be telling you something.</li>
+<li><strong>Don’t delete blindly.</strong> Missing or odd data might be telling you something more than what’s on the surface.</li>
 <li><strong>Start simple.</strong> Begin with a baseline, pick the score that matters to your client, and only add complexity if it clearly helps.</li>
 </ul>
 </section>
